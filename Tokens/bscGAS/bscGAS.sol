@@ -1,5 +1,10 @@
 // bscGAS (BEP20)
-
+// https://gasstationcrypto.gitbook.io/the-crypto-gas-station/
+// The first token in our ecosystem
+// 
+//
+//
+// 
 
 
 // SPDX-License-Identifier: MIT
@@ -28,8 +33,6 @@ contract bscGAS is ERC20, Ownable {
 
     address public deadWallet = 0x000000000000000000000000000000000000dEaD;
 
-    address public immutable BNB = address(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c); //BNB
-
     uint256 public swapTokensAtAmount = 2000000 * (10**18);
     
     mapping(address => bool) public _isBlacklisted;
@@ -40,6 +43,7 @@ contract bscGAS is ERC20, Ownable {
     uint256 public totalFees = BNBRewardsFee.add(liquidityFee).add(marketingFee);
 
     address public _marketingWalletAddress = 0x66099144D2cee6DdD78182f1748BE1ab1AA619F5;
+
 
 
     // use by default 300,000 gas to process auto-claiming dividends
@@ -363,11 +367,11 @@ contract bscGAS is ERC20, Ownable {
 
     function swapAndSendToFee(uint256 tokens) private  {
 
-        uint256 initialBNBBalance = IERC20(BNB).balanceOf(address(this));
+        uint256 initialBalance = address(this).balance;
 
-        swapTokensForBNB(tokens);
-        uint256 newBalance = (IERC20(BNB).balanceOf(address(this))).sub(initialBNBBalance);
-        IERC20(BNB).transfer(_marketingWalletAddress, newBalance);
+        swapTokensForEth(tokens);
+        uint256 newBalance = address(this).balance.sub(initialBalance);
+        payable(_marketingWalletAddress).transfer(newBalance);
     }
 
     function swapAndLiquify(uint256 tokens) private {
@@ -415,25 +419,6 @@ contract bscGAS is ERC20, Ownable {
 
     }
 
-    function swapTokensForBNB(uint256 tokenAmount) private {
-
-        address[] memory path = new address[](3);
-        path[0] = address(this);
-        path[1] = uniswapV2Router.WETH();
-        path[2] = BNB;
-
-        _approve(address(this), address(uniswapV2Router), tokenAmount);
-
-        // make the swap
-        uniswapV2Router.swapExactTokensForTokensSupportingFeeOnTransferTokens(
-            tokenAmount,
-            0,
-            path,
-            address(this),
-            block.timestamp
-        );
-    }
-
     function addLiquidity(uint256 tokenAmount, uint256 ethAmount) private {
 
         // approve token transfer to cover all possible scenarios
@@ -452,13 +437,12 @@ contract bscGAS is ERC20, Ownable {
     }
 
     function swapAndSendDividends(uint256 tokens) private{
-        swapTokensForBNB(tokens);
-        uint256 dividends = IERC20(BNB).balanceOf(address(this));
-        bool success = IERC20(BNB).transfer(address(dividendTracker), dividends);
+       swapTokensForEth(tokens);
+        uint256 dividends = address(this).balance;
+        (bool success,) = address(dividendTracker).call{value: dividends}("");
 
-        if (success) {
-            dividendTracker.distributeBNBDividends(dividends);
-            emit SendDividends(tokens, dividends);
+        if(success) {
+   	 		emit SendDividends(tokens, dividends);
         }
     }
 }
