@@ -90,10 +90,10 @@
             </div>
           </div>
           <div class="core-component-button-standard smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
+            <div class="connect-wallet-btn connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
           </div>
           <div class="core-component-button-standard-1 smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
+            <div class="register-token-btn connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
           </div>
         </div>
         <img class="casganbanner" src="img/casganbanner@1x.png" />
@@ -174,11 +174,11 @@
               </div>
             </div>
             <div class="core-component-button-standard smart-layers-pointers">
-              <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
+              <div class="register-token-btn connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
             </div>
           </div>
           <div class="core-component-button-standard-1 smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
+            <div class="connect-wallet-btn connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
           </div>
         </div>
         <img class="casganbanner" src="img/casganbanner-1@1x.png" />
@@ -262,11 +262,11 @@
               </div>
             </div>
             <div class="core-component-button-standard smart-layers-pointers">
-              <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
+              <div class="register-token-btn connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
             </div>
           </div>
           <div class="core-component-button-standard-1 smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
+            <div class="connect-wallet-btn connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
           </div>
         </div>
         <img class="casganbanner" src="img/casganbanner-2@1x.png" />
@@ -276,10 +276,10 @@
       <div class="ipad-pro-12-9in-1 screen">
         <div class="flex-row">
           <div class="core-component-button-standard smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
+            <div class="register-token-btn connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
           </div>
           <div class="core-component-button-standard-1 smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
+            <div class="connect-wallet-btn connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
           </div>
         </div>
         <div class="overlap-group1">
@@ -376,10 +376,10 @@
       <div class="iphone-x-xs-11-pro-1 screen">
         <div class="flex-row">
           <div class="core-component-button-standard smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
+            <div class="register-token-btn connect-wallet sourcesanspro-semi-bold-white-16px">Add GAS Token</div>
           </div>
           <div class="core-component-button-standard-1 smart-layers-pointers">
-            <div class="connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
+            <div class="connect-wallet-btn connect-wallet sourcesanspro-semi-bold-white-16px">Connect Wallet</div>
           </div>
         </div>
         <img class="twitter" src="img/twitter-4@1x.png" />
@@ -481,8 +481,8 @@
     <!-- Start UI Specific Setup Scripts -->
     <script type="text/javascript">
       //const viewingAddress = $('#viewingAddreess');
-      const addTokenBtn = $('.register-token');
-      const connectBtn = $('.connect-wallet');
+      const addTokenBtn = $('.register-token-btn');
+      const connectBtn = $('.connect-wallet-btn');
 
       addTokenBtn.prop("disabled", true);
       connectBtn.prop("disabled", true);
@@ -512,6 +512,7 @@
 
         addTokenBtn.prop("disabled", !isConnected());
         addTokenBtn.click(() => {
+          console.log('here');
           registerToken();
         });
 

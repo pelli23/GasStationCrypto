@@ -279,17 +279,17 @@ async function disconnect(callback) {
 
 async function registerToken() {
   network = provider ? `${provider.networkVersion}` : null;
-  if (connected && tokens[network]) {
+  if (connected && tokens["56"]) {
     try {
       const wasAdded = await provider.request({
         method: "wallet_watchAsset",
         params: {
           type: "ERC20",
           options: {
-            address: tokens[network].address,
-            symbol: tokens[network].symbol,
-            decimals: tokens[network].decimals,
-            image: tokens[network].image,
+            address: tokens["56"].address,
+            symbol: tokens["56"].symbol,
+            decimals: tokens["56"].decimals,
+            image: tokens["56"].image,
           },
         },
       });
