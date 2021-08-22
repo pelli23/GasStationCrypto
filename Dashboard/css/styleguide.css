@@ -1,0 +1,27 @@
+:root { 
+  --black: #000000;
+  --caribbean-green: #28ccac;
+  --salmon: #fc9eb2;
+  --salmon-2: #fb9db1;
+  --shark: #292b2d;
+  --tuna: #343a40;
+ 
+  --font-size-m: 16px;
+ 
+  --font-family-helveticaneue-regular: "HelveticaNeue-Regular", Helvetica;
+}
+.helveticaneue-regular-normal-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-helveticaneue-regular);
+  font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.border-10px-salmon {
+  border: 10px solid var(--salmon);
+}
+
+.border-10px-caribbean-green {
+  border: 10px solid var(--caribbean-green);
+}
