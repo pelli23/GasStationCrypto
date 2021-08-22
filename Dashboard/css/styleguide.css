@@ -1,19 +1,59 @@
 :root { 
-  --black: #000000;
   --caribbean-green: #28ccac;
+  --dodger-blue: #2a99fb;
+  --nevada: #6b6f7a;
+  --outer-space: #42454d;
   --salmon: #fc9eb2;
-  --salmon-2: #fb9db1;
   --shark: #292b2d;
-  --tuna: #343a40;
+  --silver: #cfc8c8;
+  --white: #ffffff;
  
+  --font-size-l: 30px;
   --font-size-m: 16px;
+  --font-size-xl: 45px;
+  --font-size-xxl: 53px;
+  --font-size-xxxl: 75px;
  
-  --font-family-helveticaneue-regular: "HelveticaNeue-Regular", Helvetica;
+  --font-family-impact: "Impact", Helvetica;
+  --font-family-impact-regular: "Impact-Regular", Helvetica;
+  --font-family-source_sans_pro: "Source Sans Pro", Helvetica;
 }
-.helveticaneue-regular-normal-black-16px {
-  color: var(--black);
-  font-family: var(--font-family-helveticaneue-regular);
+.impact-regular-normal-outer-space-53px {
+  color: var(--outer-space);
+  font-family: var(--font-family-impact-regular);
+  font-size: var(--font-size-xxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.sourcesanspro-semi-bold-white-16px {
+  color: var(--white);
+  font-family: var(--font-family-source_sans_pro);
   font-size: var(--font-size-m);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.impact-regular-normal-outer-space-45px {
+  color: var(--outer-space);
+  font-family: var(--font-family-impact-regular);
+  font-size: var(--font-size-xl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.impact-regular-normal-outer-space-30px {
+  color: var(--outer-space);
+  font-family: var(--font-family-impact-regular);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.impact-regular-normal-outer-space-75px {
+  color: var(--outer-space);
+  font-family: var(--font-family-impact-regular);
+  font-size: var(--font-size-xxxl);
   font-style: normal;
   font-weight: 400;
 }

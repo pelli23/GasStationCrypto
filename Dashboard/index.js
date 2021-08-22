@@ -205,7 +205,7 @@ async function loadStats() {
       );
 
     stats.marketCap = ethers.utils.formatEther(
-      circulatingSupply.div(gasReflectValue).mul(bnbValue)
+      circulatingSupply.mul(bnbValue).div(gasReflectValue)
     );
     stats.lpValue = ethers.utils.formatEther(
       lpSupply.mul(bnbValue).mul(percentA).div(decimals).div(decimals)
@@ -225,7 +225,7 @@ async function loadStats() {
       const balance = await gasReflectContract.balanceOf(address);
       stats.balance = ethers.utils.formatEther(balance);
       stats.balanceUSD = ethers.utils.formatEther(
-        balance.mul(bnbValue).div(decimals)
+        balance.mul(bnbValue).div(gasReflectValue)
       );
 
       const accountInfo = await gasReflectContract.getAccountDividendsInfo(
