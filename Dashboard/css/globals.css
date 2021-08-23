@@ -1,11 +1,16 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
 
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:600");
 @font-face {
-  font-family: "Impact-Regular";
+  font-family: "Arial-Regular";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Impact.ttf") format("truetype");
+  src: url("../fonts/Arial.ttf") format("truetype");
+}
+@font-face {
+  font-family: "HelveticaNeue-Regular";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/HLB.ttf") format("truetype");
 }
 .screen a {
   display: contents;
