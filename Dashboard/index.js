@@ -92,11 +92,44 @@ const gasReflectAbi = [
   },
 ];
 
+let refreshInterval = 600000;
+
 let provider;
 let network;
 let connected;
 let address;
 let statsUpdated;
+
+const refreshData = {
+  gasPrice: {
+    timeout: null,
+    refreshing: false,
+  },
+  bnbPrice: {
+    timeout: null,
+    refreshing: false,
+  },
+  lpData: {
+    timeout: null,
+    refreshing: false,
+  },
+  totalRewardsData: {
+    timeout: null,
+    refreshing: false,
+  },
+  holdersData: {
+    timeout: null,
+    refreshing: false,
+  },
+  balanceData: {
+    timeout: null,
+    refreshing: false,
+  },
+  rewardsData: {
+    timeout: null,
+    refreshing: false,
+  },
+};
 
 const stats = {
   totalRewards: "0",
@@ -110,6 +143,7 @@ const stats = {
   lpValue: "0",
   holders: "0",
   gasPrice: "5",
+  internal: {},
 };
 
 const decimals = ethers.BigNumber.from(10).pow(18);
@@ -137,6 +171,11 @@ async function configure(statsUpdatedCallback) {
   );
 
   provider = await detectEthereumProvider();
+
+  if (provider.selectedAddress) {
+    address = provider.selectedAddress;
+  }
+
   network = provider ? `${provider.networkVersion}` : null;
   connected = !!provider;
 
@@ -171,32 +210,144 @@ async function getTokenValueFromLP(token, lp, provider) {
   return [value, percentA, percentB, lpTotalSupply];
 }
 
-async function loadStats() {
-  if (tokens["56"]) {
+async function refreshGasPrice() {
+  if (refreshData.gasPrice.refreshing) {
+    return;
+  }
+
+  refreshData.gasPrice.refreshing = true;
+  clearTimeout(refreshData.gasPrice.timeout);
+
+  try {
     const response = await fetch("https://bscgas.info/gas");
 
     if (response.ok) {
       const result = await response.json();
       stats.gasPrice = result.standard;
     }
+  } catch (e) {
+    console.error(e);
+  }
 
-    const gasReflectContract = new ethers.Contract(
-      tokens["56"].address,
-      gasReflectAbi,
-      tokens["56"].provider
+  const halfInterval = refreshInterval / 2;
+  refreshData.gasPrice.timeout = setTimeout(
+    refreshGasPrice,
+    (halfInterval + Math.random() * halfInterval) * 5
+  );
+  refreshData.gasPrice.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+function updateMarketCap() {
+  if (
+    stats.internal.circulatingSupply &&
+    stats.internal.bnbValue &&
+    stats.internal.gasReflectValue
+  ) {
+    stats.marketCap = ethers.utils.formatEther(
+      stats.internal.circulatingSupply
+        .mul(stats.internal.bnbValue)
+        .div(stats.internal.gasReflectValue)
     );
+  }
+}
 
-    const totalSupply = await gasReflectContract.totalSupply();
-    const burnedSupply = await gasReflectContract.balanceOf(
-      "0x000000000000000000000000000000000000dead"
+function updateLpValue() {
+  if (stats.internal.bnbValue && stats.internal.percentA) {
+    stats.lpValue = ethers.utils.formatEther(
+      stats.internal.lpSupply
+        .mul(stats.internal.bnbValue)
+        .mul(stats.internal.percentA)
+        .div(decimals)
+        .div(decimals)
     );
-    const circulatingSupply = totalSupply.sub(burnedSupply);
+  }
+}
 
+function updateTotalRewardsUsd() {
+  if (stats.internal.totalRewards && stats.internal.bnbValue) {
+    stats.totalRewardsUSD = ethers.utils.formatEther(
+      stats.internal.totalRewards.mul(stats.internal.bnbValue).div(decimals)
+    );
+  }
+}
+
+function updateBalanceUsd() {
+  if (address) {
+    if (stats.internal.balance && stats.internal.bnbValue) {
+      stats.balanceUSD = ethers.utils.formatEther(
+        stats.internal.balance
+          .mul(stats.internal.bnbValue)
+          .div(stats.internal.gasReflectValue)
+      );
+    }
+  } else {
+    stats.balanceUSD = "0";
+  }
+}
+
+function updateRewardsUsd() {
+  if (address) {
+    if (stats.internal.rewards && stats.internal.bnbValue) {
+      stats.rewardsUSD = ethers.utils.formatEther(
+        stats.internal.rewards.mul(stats.internal.bnbValue).div(decimals)
+      );
+    }
+  } else {
+    stats.rewardsUSD = "0";
+  }
+}
+
+async function refreshBnbPrice() {
+  if (refreshData.bnbPrice.refreshing) {
+    return;
+  }
+
+  refreshData.bnbPrice.refreshing = true;
+  clearTimeout(refreshData.bnbPrice.timeout);
+
+  try {
     let [bnbValue] = await getTokenValueFromLP(
       tokens["56"].gasAddress,
       tokens["56"].gasLpAddress,
       tokens["56"].provider
     );
+
+    stats.internal.bnbValue = bnbValue;
+  } catch (e) {
+    console.error(e);
+  }
+
+  updateMarketCap();
+  updateLpValue();
+  updateTotalRewardsUsd();
+  updateBalanceUsd();
+  updateRewardsUsd();
+
+  const halfInterval = refreshInterval / 2;
+  refreshData.bnbPrice.timeout = setTimeout(
+    refreshBnbPrice,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.bnbPrice.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function refreshLpData() {
+  if (refreshData.lpData.refreshing) {
+    return;
+  }
+
+  refreshData.lpData.refreshing = true;
+  clearTimeout(refreshData.lpData.timeout);
+
+  try {
     let [gasReflectValue, percentA, percentB, lpSupply] =
       await getTokenValueFromLP(
         tokens["56"].address,
@@ -204,44 +355,211 @@ async function loadStats() {
         tokens["56"].provider
       );
 
-    stats.marketCap = ethers.utils.formatEther(
-      circulatingSupply.mul(bnbValue).div(gasReflectValue)
-    );
-    stats.lpValue = ethers.utils.formatEther(
-      lpSupply.mul(bnbValue).mul(percentA).div(decimals).div(decimals)
+    stats.internal.gasReflectValue = gasReflectValue;
+    stats.internal.percentA = percentA;
+    stats.internal.percentB = percentB;
+    stats.internal.lpSupply = lpSupply;
+  } catch (e) {
+    console.error(e);
+  }
+
+  updateMarketCap();
+  updateLpValue();
+
+  const halfInterval = refreshInterval / 2;
+  refreshData.lpData.timeout = setTimeout(
+    refreshLpData,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.lpData.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function refreshTotalRewardsData() {
+  if (refreshData.totalRewardsData.refreshing) {
+    return;
+  }
+
+  refreshData.totalRewardsData.refreshing = true;
+  clearTimeout(refreshData.totalRewardsData.timeout);
+
+  try {
+    const gasReflectContract = new ethers.Contract(
+      tokens["56"].address,
+      gasReflectAbi,
+      tokens["56"].provider
     );
 
     const totalRewards =
       await gasReflectContract.getTotalDividendsDistributed();
+    stats.internal.totalRewards = totalRewards;
     stats.totalRewards = ethers.utils.formatEther(totalRewards);
-    stats.totalRewardsUSD = ethers.utils.formatEther(
-      totalRewards.mul(bnbValue).div(decimals)
+
+    updateTotalRewardsUsd();
+  } catch (e) {
+    console.error(e);
+  }
+
+  const halfInterval = refreshInterval / 2;
+  refreshData.totalRewardsData.timeout = setTimeout(
+    refreshLpData,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.totalRewardsData.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function refreshHoldersData() {
+  if (refreshData.holdersData.refreshing) {
+    return;
+  }
+
+  refreshData.holdersData.refreshing = true;
+  clearTimeout(refreshData.holdersData.timeout);
+
+  try {
+    const gasReflectContract = new ethers.Contract(
+      tokens["56"].address,
+      gasReflectAbi,
+      tokens["56"].provider
     );
 
     const holders = await gasReflectContract.getNumberOfDividendTokenHolders();
     stats.holders = holders.toString();
+  } catch (e) {
+    console.error(e);
+  }
 
-    if (address) {
+  const halfInterval = refreshInterval / 2;
+  refreshData.holdersData.timeout = setTimeout(
+    refreshLpData,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.holdersData.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function refreshBalanceData() {
+  if (refreshData.balanceData.refreshing) {
+    return;
+  }
+
+  refreshData.balanceData.refreshing = true;
+  clearTimeout(refreshData.balanceData.timeout);
+
+  if (address) {
+    try {
+      const gasReflectContract = new ethers.Contract(
+        tokens["56"].address,
+        gasReflectAbi,
+        tokens["56"].provider
+      );
+
       const balance = await gasReflectContract.balanceOf(address);
+      stats.internal.balance = balance;
       stats.balance = ethers.utils.formatEther(balance);
-      stats.balanceUSD = ethers.utils.formatEther(
-        balance.mul(bnbValue).div(gasReflectValue)
+    } catch (e) {
+      console.error(e);
+    }
+  } else {
+    stats.internal.balance = 0;
+    stats.balance = "";
+  }
+
+  updateBalanceUsd();
+
+  const halfInterval = refreshInterval / 2;
+  refreshData.balanceData.timeout = setTimeout(
+    refreshLpData,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.balanceData.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function refreshRewardsData() {
+  if (refreshData.rewardsData.refreshing) {
+    return;
+  }
+
+  refreshData.rewardsData.refreshing = true;
+  clearTimeout(refreshData.rewardsData.timeout);
+
+  if (address) {
+    try {
+      const gasReflectContract = new ethers.Contract(
+        tokens["56"].address,
+        gasReflectAbi,
+        tokens["56"].provider
       );
 
       const accountInfo = await gasReflectContract.getAccountDividendsInfo(
         address
       );
+      stats.internal.rewards = accountInfo[4];
       stats.rewards = ethers.utils.formatEther(accountInfo[4]);
-      stats.rewardsUSD = ethers.utils.formatEther(
-        accountInfo[4].mul(bnbValue).div(decimals)
+    } catch (e) {
+      console.error(e);
+    }
+  } else {
+    stats.internal.rewards = 0;
+    stats.rewards = "";
+  }
+
+  updateRewardsUsd();
+
+  const halfInterval = refreshInterval / 2;
+  refreshData.rewardsData.timeout = setTimeout(
+    refreshLpData,
+    halfInterval + Math.random() * halfInterval
+  );
+  refreshData.rewardsData.refreshing = false;
+
+  if (statsUpdated) {
+    statsUpdated();
+  }
+}
+
+async function loadStats() {
+  if (tokens["56"]) {
+    refreshGasPrice();
+
+    refreshBnbPrice();
+    refreshLpData();
+
+    const gasReflectContract = new ethers.Contract(
+      tokens["56"].address,
+      gasReflectAbi,
+      tokens["56"].provider
+    );
+
+    if (!stats.internal.circulatingSupply) {
+      const totalSupply = await gasReflectContract.totalSupply();
+      const burnedSupply = await gasReflectContract.balanceOf(
+        "0x000000000000000000000000000000000000dead"
       );
-    } else {
-      stats.balance = "0";
-      stats.rewards = "0";
-      stats.rewardsUSD = "0";
+      stats.internal.circulatingSupply = totalSupply.sub(burnedSupply);
+
+      updateMarketCap();
     }
 
-    console.log(stats);
+    refreshTotalRewardsData();
+    refreshHoldersData();
+    refreshBalanceData();
+    refreshRewardsData();
+
     if (statsUpdated) {
       statsUpdated();
     }
