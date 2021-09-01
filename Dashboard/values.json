@@ -1,0 +1,14 @@
+{
+  "funding": {
+    "bsc-poly": 2100,
+    "bsc-ftm": 0,
+    "ftm-poly": 0,
+    "bsc-eth": 0,
+    "poly-eth": 0,
+    "ftm-eth": 0,
+  }
+  "news": {
+    "headline": "text",
+    "body": "text"
+  }
+}
