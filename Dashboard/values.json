@@ -1,12 +1,35 @@
 {
-  "funding": {
-    "bsc-poly": 2100,
-    "bsc-ftm": 0,
-    "ftm-poly": 0,
-    "bsc-eth": 0,
-    "poly-eth": 0,
-    "ftm-eth": 0,
-  }
+  "optimalFunding": 50000,
+  "chains": {
+    "56": {
+      "name": "Binance Smart Chain",
+      "symbol": "BSC",
+      "token": "BNB",
+      "status": "Funding",
+      "funded": 2100
+    },
+    "137": {
+      "name": "Polygon",
+      "symbol": "POLY",
+      "token": "MATIC",
+      "status": "Funding",
+      "funded": 0
+    },
+    "250": {
+      "name": "Fantom",
+      "symbol": "FTM",
+      "token": "FTM",
+      "status": "Not Started",
+      "funded": 0
+    },
+    "1": {
+      "name": "Ethereum",
+      "symbol": "ETH",
+      "token": "ETH",
+      "status": "Not Started",
+      "funded": 0
+    }
+  },
   "news": {
     "headline": "text",
     "body": "text"
