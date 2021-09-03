@@ -10,6 +10,7 @@ const tokens = {
     lpAddress: "0x340db2a8E77aD047e5E786c94dB0aE1593082264",
     gasAddress: "0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c",
     gasLpAddress: "0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16",
+    stableDecimals: 18,
     blockExplorerUrls: ["https://www.bscscan.com/"],
   },
   137: {
@@ -20,9 +21,10 @@ const tokens = {
     rpcUrls: ["https://polygon-rpc.com/"],
     blockCreated: 17732765,
     provider: null,
-    lpAddress: "",
+    lpAddress: "0x2637ce16e98fcc66f2ccdd36087defdcf955b68a",
     gasAddress: "0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270",
     gasLpAddress: "0xcd353F79d9FADe311fC3119B841e1f456b54e858",
+    stableDecimals: 6,
     blockExplorerUrls: ["https://polygonscan.com/"],
   },
 };
@@ -119,11 +121,7 @@ const refreshData = {
     timeout: null,
     refreshing: false,
   },
-  bnbPrice: {
-    timeout: null,
-    refreshing: false,
-  },
-  maticPrice: {
+  gasValue: {
     timeout: null,
     refreshing: false,
   },
@@ -163,8 +161,6 @@ let stats = {
   gasPrice: "5",
   internal: {},
 };
-
-const decimals = ethers.BigNumber.from(10).pow(18);
 
 function setAddress(addr) {
   address = addr;
@@ -243,25 +239,27 @@ async function configure(statsUpdatedCallback) {
   loadStats();
 }
 
+const decimals = ethers.BigNumber.from(10).pow(18);
+
 async function getTokenValueFromLP(token, lp, provider) {
   const lpContract = new ethers.Contract(lp, lpAbi, provider);
 
   const lpToken0 = await lpContract.token0();
   const lpReserves = await lpContract.getReserves();
-  const lpTotalSupply = await lpContract.totalSupply();
+  let lpTotalSupply = await lpContract.totalSupply();
 
   let value = 1;
   let percentA = 1;
   let percentB = 1;
 
-  if (lpToken0 == token) {
+  if (lpToken0.toLowerCase() == token.toLowerCase()) {
     value = decimals.mul(lpReserves._reserve1).div(lpReserves._reserve0);
-    percentA = decimals.mul(lpReserves._reserve0).div(lpTotalSupply);
-    percentB = decimals.mul(lpReserves._reserve1).div(lpTotalSupply);
-  } else {
-    value = decimals.mul(lpReserves._reserve0).div(lpReserves._reserve1);
     percentA = decimals.mul(lpReserves._reserve1).div(lpTotalSupply);
     percentB = decimals.mul(lpReserves._reserve0).div(lpTotalSupply);
+  } else {
+    value = decimals.mul(lpReserves._reserve0).div(lpReserves._reserve1);
+    percentA = decimals.mul(lpReserves._reserve0).div(lpTotalSupply);
+    percentB = decimals.mul(lpReserves._reserve1).div(lpTotalSupply);
   }
 
   return [value, percentA, percentB, lpTotalSupply];
@@ -316,8 +314,8 @@ function updateLpValue() {
   if (stats.internal.gasValue && stats.internal.percentA) {
     stats.lpValue = ethers.utils.formatEther(
       stats.internal.lpSupply
-        .mul(stats.internal.gasValue)
         .mul(stats.internal.percentA)
+        .mul(stats.internal.gasValue)
         .div(decimals)
         .div(decimals)
     );
@@ -341,8 +339,10 @@ function updateBalanceUsd() {
     ) {
       stats.balanceUSD = ethers.utils.formatEther(
         stats.internal.balance
+          .mul(stats.internal.gasReflectValue)
           .mul(stats.internal.gasValue)
-          .div(stats.internal.gasReflectValue)
+          .div(decimals)
+          .div(decimals)
       );
     }
   } else {
@@ -362,26 +362,24 @@ function updateRewardsUsd() {
   }
 }
 
-async function refreshBnbPrice() {
-  if (refreshData.bnbPrice.refreshing) {
+async function refreshGasValue() {
+  if (refreshData.gasValue.refreshing) {
     return;
   }
 
-  refreshData.bnbPrice.refreshing = true;
-  clearTimeout(refreshData.bnbPrice.timeout);
+  refreshData.gasValue.refreshing = true;
+  clearTimeout(refreshData.gasValue.timeout);
 
   try {
-    let [bnbValue] = await getTokenValueFromLP(
-      tokens["56"].gasAddress,
-      tokens["56"].gasLpAddress,
-      tokens["56"].provider
+    let [gasValue] = await getTokenValueFromLP(
+      tokens[network].gasAddress,
+      tokens[network].gasLpAddress,
+      tokens[network].provider
     );
 
-    if (network == "56") {
-      stats.internal.gasValue = bnbValue;
-    }
-
-    stats.internal.bnbValue = bnbValue;
+    stats.internal.gasValue = gasValue.mul(
+      ethers.BigNumber.from(10).pow(18 - tokens[network].stableDecimals)
+    );
   } catch (e) {
     console.error(e);
   }
@@ -393,53 +391,11 @@ async function refreshBnbPrice() {
   updateRewardsUsd();
 
   const halfInterval = refreshInterval / 2;
-  refreshData.bnbPrice.timeout = setTimeout(
-    refreshBnbPrice,
+  refreshData.gasValue.timeout = setTimeout(
+    refreshGasValue,
     halfInterval + Math.random() * halfInterval
   );
-  refreshData.bnbPrice.refreshing = false;
-
-  if (statsUpdated) {
-    statsUpdated();
-  }
-}
-
-async function refreshMaticPrice() {
-  if (refreshData.maticPrice.refreshing) {
-    return;
-  }
-
-  refreshData.maticPrice.refreshing = true;
-  clearTimeout(refreshData.maticPrice.timeout);
-
-  try {
-    let [maticValue] = await getTokenValueFromLP(
-      tokens["137"].gasAddress,
-      tokens["137"].gasLpAddress,
-      tokens["137"].provider
-    );
-
-    if (network == "137") {
-      stats.internal.gasValue = maticValue;
-    }
-
-    stats.internal.maticValue = maticValue;
-  } catch (e) {
-    console.error(e);
-  }
-
-  updateMarketCap();
-  updateLpValue();
-  updateTotalRewardsUsd();
-  updateBalanceUsd();
-  updateRewardsUsd();
-
-  const halfInterval = refreshInterval / 2;
-  refreshData.maticPrice.timeout = setTimeout(
-    refreshmaticPrice,
-    halfInterval + Math.random() * halfInterval
-  );
-  refreshData.maticPrice.refreshing = false;
+  refreshData.gasValue.refreshing = false;
 
   if (statsUpdated) {
     statsUpdated();
@@ -645,7 +601,7 @@ async function loadStats() {
   if (tokens[network]) {
     refreshGasPrice();
 
-    refreshBnbPrice();
+    refreshGasValue();
     refreshLpData();
 
     const gasReflectContract = new ethers.Contract(
