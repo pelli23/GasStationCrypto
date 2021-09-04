@@ -989,7 +989,7 @@
             $('.network-name').text(network == '56' ? "Binance Smart Chain" : "Polygon Network");
 
             const stats = getStats();
-            $('.totalgasrewardstext').text(numeral(stats.totalRewards).format('0,0.000'));
+            $('.totalgasrewardstext').text(numeral(stats.totalRewards).format('0,0.000') + (network == '56' ? ' BNB' : " MATIC"));
             // $('dd#totalRewardsUSD').text(numeral(stats.totalRewardsUSD).format('$0,0.00 a'));
             $('.mytokenbalancetext').text(numeral(stats.balance).format('0,0.000'));
             $('.mytokenvaluetext').text(numeral(stats.balanceUSD).format('$0,0.00'));
