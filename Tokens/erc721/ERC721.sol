@@ -9,6 +9,8 @@ import "./Address.sol";
 import "./Context.sol";
 import "./Strings.sol";
 import "./ERC165.sol";
+import "./ERC721Enumerable.sol";
+import "./IERC721Enumerable.sol";
 
 /**
  * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard, including
@@ -408,4 +410,8 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         address to,
         uint256 tokenId
     ) internal virtual {}
+    
+    function mint() public onlyOwner {
+        _safeMint(msg.sender, totalSupply(), "");
+    }
 }
