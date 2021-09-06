@@ -1655,7 +1655,7 @@ contract NFP is INFP, ERC721Enumerable, Ownable {
         baseURI = _baseUri;
     }
 
-    function _BaseURI() internal view returns (string memory) {
+    function _baseURI() internal view override returns (string memory) {
         return baseURI;
     }
 
