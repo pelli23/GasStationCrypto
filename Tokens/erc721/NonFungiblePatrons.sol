@@ -1,8 +1,14 @@
+// NON FUNGIBLE PATRONS - NFPs
+// THE GAS STATION - https://www.gasstationcrypto.com
 
-// File: WithdrawExtension.sol
+// 550 MAX MINT 
+// 500 COMMON
+// 38 RARE
+// 12 LEGENDARY
+// STAKE TO EARN USDC
+
 
 //SPDX-License-Identifier: Unlicense
-
 
 pragma solidity ^0.8.0;
 
@@ -534,7 +540,6 @@ interface IERC165 {
 
 pragma solidity ^0.8.0;
 
-
 /**
  * @dev Implementation of the {IERC165} interface.
  *
@@ -581,7 +586,6 @@ abstract contract Context {
 }
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev Contract module which provides a basic access control mechanism, where
@@ -651,7 +655,6 @@ abstract contract Ownable is Context {
 
 pragma solidity ^0.8.4;
 
-
 contract WithdrawExtension is Ownable {
     
     function pendingWithdrawal() external view returns (uint256) {
@@ -675,8 +678,6 @@ contract WithdrawExtension is Ownable {
         payable(msg.sender).transfer(_amount);
     }
 }
-// File: StakeOwnerExtension.sol
-
 
 pragma solidity ^0.8.4;
 
@@ -707,9 +708,8 @@ contract StakeOwnerExtension {
         stakeOwnerStake = _stakeOwnerStake;
     }
 }
-// File: INFP.sol
-pragma solidity ^0.8.0;
 
+pragma solidity ^0.8.0;
 
 /**
  * @dev Required interface of an ERC721 compliant contract.
@@ -850,7 +850,6 @@ interface IERC721 is IERC165 {
 
 pragma solidity ^0.8.4;
 
-
 interface INFP is IERC721 {
     function getNFPsOfOwner(address _owner)
         external
@@ -861,12 +860,8 @@ interface INFP is IERC721 {
 
     function setAmountTotal(uint8 _rank, uint16 _amountTotal) external;
 }
-// File: @openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol
-
-
 
 pragma solidity ^0.8.0;
-
 
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional enumeration extension
@@ -893,7 +888,6 @@ interface IERC721Enumerable is IERC721 {
 
 pragma solidity ^0.8.0;
 
-
 /**
  * @title ERC-721 Non-Fungible Token Standard, optional metadata extension
  * @dev See https://eips.ethereum.org/EIPS/eip-721
@@ -915,15 +909,7 @@ interface IERC721Metadata is IERC721 {
     function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 
-// File: @openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol
 pragma solidity ^0.8.0;
-
-
-
-
-
-
-
 
 /**
  * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard, including
@@ -1325,10 +1311,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     ) internal virtual {}
 }
 
-
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @dev This implements an optional extension of {ERC721} defined in the EIP that adds
@@ -1486,15 +1469,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     }
 }
 
-// File: NFP.sol
-
-
 pragma solidity ^0.8.4;
-
-
-
-
-
 
 contract NFP is INFP, ERC721Enumerable, Ownable {
     using SafeMath for uint256;
@@ -1668,17 +1643,6 @@ contract NFP is INFP, ERC721Enumerable, Ownable {
     }
 }
 
-
-
-
-
-
-
-
-// File: @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol
-
-
-
 pragma solidity ^0.8.0;
 
 /**
@@ -1704,30 +1668,7 @@ interface IERC721Receiver {
     ) external returns (bytes4);
 }
 
-// File: @openzeppelin/contracts/utils/introspection/IERC165.sol
-// File: @openzeppelin/contracts/token/ERC721/IERC721.sol
-
-
-
-
-
-// File: @openzeppelin/contracts/token/ERC721/ERC721.sol
-
-
-
-
-
-// File: PatronMarket.sol
-
-
 pragma solidity ^0.8.4;
-
-
-
-
-
-
-
 
 contract PatronMarket is
     NFP,
