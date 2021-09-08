@@ -1,0 +1,8 @@
+node_modules
+yarn-error.log
+
+.env
+
+#Hardhat files
+cache
+deployments/localhost
