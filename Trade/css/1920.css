@@ -1,0 +1,2887 @@
+/* screen - 1440 */
+
+.x1440 {
+  align-items: center;
+  background-color: var(--dawn-pink);
+  display: flex;
+  flex-direction: column;
+  height: 900px;
+  width: 1440px;
+}
+
+.x1440 .header {
+  align-items: flex-start;
+  display: flex;
+  margin-top: -225px;
+  min-width: 1440px;
+}
+
+.x1440 .overlap-group4 {
+  height: 309px;
+  position: relative;
+  width: 1440px;
+}
+
+.x1440 .header-1 {
+  height: 84px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 225px;
+  width: 1440px;
+}
+
+.x1440 .button {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 43px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x1440 .mask-group-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 153px;
+}
+
+.x1440 .button-1 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 260px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x1440 .mask-group-1-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 154px;
+}
+
+.x1440 .drop-down {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 1093px;
+  position: absolute;
+  top: 0;
+  width: 277px;
+}
+
+.x1440 .drop-down-1 {
+  align-items: flex-end;
+  background-image: url(../img/path-454@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 195px;
+  padding: 18px 14px;
+  width: 277px;
+}
+
+.x1440 .overlap-group3 {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--white);
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  margin-left: 1.0px;
+  min-width: 246px;
+  padding: 4px 9px;
+}
+
+.x1440 .bnb {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1440 .binance-smart-chain-1 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 1.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x1440 .overlap-group1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 17px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x1440 .bnb-1 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1440 .binance-smart-chain {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 3.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x1440 .overlap-group2 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x1440 .bnb-2 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1440 .overlap-group {
+  align-items: flex-start;
+  background-color: var(--salmon);
+  border-radius: 5px;
+  display: flex;
+  height: 53px;
+  margin-right: -3px;
+  margin-top: 43px;
+  min-width: 147px;
+  padding: 13px 16px;
+}
+
+.x1440 .networks {
+  letter-spacing: 0;
+  line-height: 20px;
+  min-height: 24px;
+  min-width: 85px;
+  white-space: nowrap;
+}
+
+.x1440 .mask {
+  align-self: center;
+  height: 8px;
+  margin-bottom: 5.0px;
+  margin-left: 8px;
+  object-fit: cover;
+  width: 16px;
+}
+
+.x1440 .hub {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 0.55px;
+  margin-top: 14px;
+  min-width: 717px;
+}
+
+.x1440 .overlap-group-1 {
+  height: 704px;
+  position: relative;
+  width: 717px;
+}
+
+.x1440 .block {
+  align-items: flex-start;
+  display: flex;
+  height: 704px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.x1440 .overlap-group1-1 {
+  height: 704px;
+  margin-top: 0;
+  position: relative;
+  width: 717px;
+}
+
+.x1440 .pump450x600 {
+  height: 429px;
+  left: 339px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 7px;
+  transition: all 0.2s ease;
+  width: 377px;
+}
+
+.x1440 .pump450x600:hover {
+  transform: translate(0, -5px);
+}
+
+.x1440 .pump450x600-1 {
+  height: 421px;
+  left: 0;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 340px;
+}
+
+.x1440 .pump450x600-1:hover {
+  transform: translate(0, -5px);
+}
+
+.x1440 .rectangle-613 {
+  background-color: var(--salmon);
+  border-radius: 275px;
+  height: 527px;
+  left: 103px;
+  position: absolute;
+  top: 177px;
+  width: 473px;
+}
+
+.x1440 .rectangle-614 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 98px;
+  left: 190px;
+  position: absolute;
+  top: 200px;
+  width: 299px;
+}
+
+.x1440 .text-5 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 232px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 262px;
+  white-space: nowrap;
+}
+
+.x1440 .my-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 202px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 234px;
+  white-space: nowrap;
+}
+
+.x1440 .rectangle-615 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 290px;
+  left: 124px;
+  position: absolute;
+  top: 331px;
+  width: 432px;
+}
+
+.x1440 .logo480x350 {
+  height: 196px;
+  left: 205px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 67px;
+  transition: all 0.2s ease;
+  width: 269px;
+}
+
+.x1440 .logo480x350:hover {
+  transform: scale(1.1);
+}
+
+.x1440 .gascan500x500 {
+  height: 68px;
+  left: 478px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 530px;
+  transition: all 0.2s ease;
+  width: 68px;
+}
+
+.x1440 .gascan500x500:hover {
+  transform: rotate(15deg);
+}
+
+.x1440 .text {
+  align-items: flex-end;
+  display: flex;
+  height: 313px;
+  left: 138px;
+  position: absolute;
+  top: 331px;
+}
+
+.x1440 .flex-col {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -3.0px;
+  min-height: 313px;
+  width: 203px;
+}
+
+.x1440 .overlap-group3-1 {
+  height: 91px;
+  margin-right: 0.71px;
+  position: relative;
+  width: 202px;
+}
+
+.x1440 .my {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1440 .token-balance {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 68px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 20px;
+  white-space: nowrap;
+}
+
+.x1440 .text-6 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 18px;
+  letter-spacing: 0.22px;
+  line-height: 36px;
+  position: absolute;
+  top: 48px;
+  white-space: nowrap;
+}
+
+.x1440 .token-value {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  margin-left: 33.81px;
+  margin-top: 16px;
+  min-height: 22px;
+  min-width: 101px;
+  white-space: nowrap;
+}
+
+.x1440 .price {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.22px;
+  line-height: 36px;
+  margin-top: 5px;
+  min-height: 43px;
+  min-width: 164px;
+  white-space: nowrap;
+}
+
+.x1440 .gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  margin-right: 17.9px;
+  margin-top: 16px;
+  min-height: 22px;
+  min-width: 117px;
+  white-space: nowrap;
+}
+
+.x1440 .x11-bnb {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.22px;
+  line-height: 36px;
+  margin-right: 0.7px;
+  margin-top: 5px;
+  min-height: 43px;
+  min-width: 137px;
+  white-space: nowrap;
+}
+
+.x1440 .x24hr-volume {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 21px;
+  letter-spacing: 0.13px;
+  line-height: 21px;
+  margin-right: 0.62px;
+  margin-top: 23px;
+  min-height: 25px;
+  min-width: 127px;
+  white-space: nowrap;
+}
+
+.x1440 .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -3.0px;
+  margin-left: 5px;
+  min-height: 249px;
+  width: 198px;
+}
+
+.x1440 .overlap-group4-1 {
+  align-self: flex-end;
+  height: 121px;
+  position: relative;
+  width: 190px;
+}
+
+.x1440 .totalgasrewardscode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 173px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1440 .overlap-group2-1 {
+  height: 121px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 190px;
+}
+
+.x1440 .total-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1440 .market-capital {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 2px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 32px;
+  white-space: nowrap;
+}
+
+.x1440 .marketcapcode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 133px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 34px;
+  white-space: nowrap;
+}
+
+.x1440 .liquidity-value {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 2px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 67px;
+  white-space: nowrap;
+}
+
+.x1440 .avg-txn-price {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 99px;
+  white-space: nowrap;
+}
+
+.x1440 .address {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 124px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 99px;
+  white-space: nowrap;
+}
+
+.x1440 .liquidityvaluecode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 133px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 67px;
+  white-space: nowrap;
+}
+
+.x1440 .price-1 {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 21px;
+  letter-spacing: 0.13px;
+  line-height: 21px;
+  margin-top: 102px;
+  min-height: 25px;
+  white-space: nowrap;
+}
+/* screen - 1920 */
+
+.x1920 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  display: flex;
+  height: 1080px;
+  width: 1920px;
+}
+
+.x1920 .overlap-group {
+  height: 1240px;
+  margin-top: -225px;
+  position: relative;
+  width: 1920px;
+}
+
+.x1920 .hub {
+  align-items: flex-start;
+  display: flex;
+  height: 951px;
+  left: 465px;
+  position: absolute;
+  top: 289px;
+}
+
+.x1920 .overlap-group1 {
+  height: 951px;
+  position: relative;
+  width: 990px;
+}
+
+.x1920 .block {
+  align-items: flex-end;
+  display: flex;
+  height: 951px;
+  justify-content: flex-end;
+  left: 0;
+  padding: 0 0.0px;
+  position: absolute;
+  top: 0;
+}
+
+.x1920 .overlap-group2 {
+  height: 951px;
+  margin-bottom: 0;
+  position: relative;
+  width: 990px;
+}
+
+.x1920 .pump450x600 {
+  height: 587px;
+  left: 473px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 11px;
+  transition: all 0.2s ease;
+  width: 517px;
+}
+
+.x1920 .pump450x600:hover {
+  transform: translate(0, -5px);
+}
+
+.x1920 .pump450x600-1 {
+  height: 577px;
+  left: 0;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 466px;
+}
+
+.x1920 .pump450x600-1:hover {
+  transform: translate(0, -5px);
+}
+
+.x1920 .rectangle-613 {
+  background-color: var(--salmon);
+  border-radius: 275px;
+  height: 711px;
+  left: 143px;
+  position: absolute;
+  top: 240px;
+  width: 656px;
+}
+
+.x1920 .rectangle-614 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 132px;
+  left: 263px;
+  position: absolute;
+  top: 272px;
+  width: 415px;
+}
+
+.x1920 .text-3 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 321px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 356px;
+  white-space: nowrap;
+}
+
+.x1920 .my-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 40px;
+  left: 280px;
+  letter-spacing: 0.25px;
+  line-height: 40px;
+  position: absolute;
+  top: 318px;
+  white-space: nowrap;
+}
+
+.x1920 .rectangle-615 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 391px;
+  left: 172px;
+  position: absolute;
+  top: 449px;
+  width: 599px;
+}
+
+.x1920 .logo480x350 {
+  height: 272px;
+  left: 285px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 92px;
+  transition: all 0.2s ease;
+  width: 372px;
+}
+
+.x1920 .logo480x350:hover {
+  transform: scale(1.1);
+}
+
+.x1920 .gascan500x500 {
+  height: 94px;
+  left: 663px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 717px;
+  transition: all 0.2s ease;
+  width: 94px;
+}
+
+.x1920 .gascan500x500:hover {
+  transform: rotate(15deg);
+}
+
+.x1920 .text {
+  align-items: flex-end;
+  display: flex;
+  height: 423px;
+  left: 191px;
+  position: absolute;
+  top: 449px;
+}
+
+.x1920 .flex-col {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -3.5px;
+  min-height: 423px;
+  width: 281px;
+}
+
+.x1920 .overlap-group3 {
+  height: 122px;
+  margin-right: 0.7px;
+  position: relative;
+  width: 280px;
+}
+
+.x1920 .my {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 61px;
+  left: 0;
+  letter-spacing: 0.38px;
+  line-height: 61px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1920 .token-balance {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 94px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 27px;
+  white-space: nowrap;
+}
+
+.x1920 .text-4 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 25px;
+  letter-spacing: 0.31px;
+  line-height: 50px;
+  position: absolute;
+  top: 64px;
+  white-space: nowrap;
+}
+
+.x1920 .token-value {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  margin-left: 46.21px;
+  margin-top: 22px;
+  min-height: 30px;
+  min-width: 139px;
+  white-space: nowrap;
+}
+
+.x1920 .price {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.31px;
+  line-height: 50px;
+  margin-top: 6px;
+  min-height: 58px;
+  min-width: 227px;
+  white-space: nowrap;
+}
+
+.x1920 .gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  margin-right: 24.66px;
+  margin-top: 22px;
+  min-height: 30px;
+  min-width: 162px;
+  white-space: nowrap;
+}
+
+.x1920 .x11-bnb {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.31px;
+  line-height: 50px;
+  margin-right: 0.54px;
+  margin-top: 6px;
+  min-height: 58px;
+  min-width: 190px;
+  white-space: nowrap;
+}
+
+.x1920 .x24hr-volume {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  margin-right: 1.57px;
+  margin-top: 31px;
+  min-height: 34px;
+  min-width: 175px;
+  white-space: nowrap;
+}
+
+.x1920 .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -3.5px;
+  margin-left: 7px;
+  min-height: 336px;
+  width: 272px;
+}
+
+.x1920 .overlap-group5 {
+  align-self: flex-end;
+  height: 164px;
+  position: relative;
+  width: 261px;
+}
+
+.x1920 .totalgasrewardscode {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 24px;
+  left: 240px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1920 .overlap-group4 {
+  height: 164px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.x1920 .total-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x1920 .market-capital {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 2px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 43px;
+  white-space: nowrap;
+}
+
+.x1920 .marketcapcode {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 24px;
+  left: 184px;
+  letter-spacing: 0.15px;
+  line-height: 24px;
+  position: absolute;
+  top: 45px;
+  white-space: nowrap;
+}
+
+.x1920 .liquidity-value {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 2px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 91px;
+  white-space: nowrap;
+}
+
+.x1920 .avg-txn-price {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 134px;
+  white-space: nowrap;
+}
+
+.x1920 .address {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 171px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 134px;
+  white-space: nowrap;
+}
+
+.x1920 .liquidityvaluecode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 183px;
+  letter-spacing: 0.16px;
+  line-height: 25px;
+  position: absolute;
+  top: 91px;
+  white-space: nowrap;
+}
+
+.x1920 .price-1 {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: var(--font-size-xl);
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  margin-top: 138px;
+  min-height: 34px;
+  white-space: nowrap;
+}
+
+.x1920 .header {
+  align-items: flex-start;
+  display: flex;
+  height: 309px;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.x1920 .overlap-group5-1 {
+  height: 309px;
+  position: relative;
+  width: 1920px;
+}
+
+.x1920 .header-1 {
+  height: 84px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 225px;
+  width: 1920px;
+}
+
+.x1920 .button {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 43px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x1920 .mask-group-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 153px;
+}
+
+.x1920 .button-1 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 260px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x1920 .mask-group-1-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 154px;
+}
+
+.x1920 .drop-down {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 1573px;
+  position: absolute;
+  top: 0;
+  width: 277px;
+}
+
+.x1920 .drop-down-1 {
+  align-items: flex-end;
+  background-image: url(../img/path-454@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 195px;
+  padding: 18px 14px;
+  width: 277px;
+}
+
+.x1920 .overlap-group2-1 {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--white);
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  margin-left: 1.0px;
+  min-width: 246px;
+  padding: 4px 9px;
+}
+
+.x1920 .bnb {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1920 .binance-smart-chain-1 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 1.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x1920 .overlap-group3-1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 17px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x1920 .bnb-1 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1920 .binance-smart-chain {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 3.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x1920 .overlap-group4-1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x1920 .bnb-2 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x1920 .overlap-group1-1 {
+  align-items: flex-start;
+  background-color: var(--salmon);
+  border-radius: 5px;
+  display: flex;
+  height: 53px;
+  margin-right: -3px;
+  margin-top: 43px;
+  min-width: 147px;
+  padding: 13px 16px;
+}
+
+.x1920 .networks {
+  letter-spacing: 0;
+  line-height: 20px;
+  min-height: 24px;
+  min-width: 85px;
+  white-space: nowrap;
+}
+
+.x1920 .mask {
+  align-self: center;
+  height: 8px;
+  margin-bottom: 5.0px;
+  margin-left: 8px;
+  object-fit: cover;
+  width: 16px;
+}
+/* screen - 4k */
+
+.x4k {
+  align-items: center;
+  background-color: var(--dawn-pink);
+  display: flex;
+  flex-direction: column;
+  height: 2160px;
+  width: 4096px;
+}
+
+.x4k .header {
+  align-items: flex-start;
+  display: flex;
+  margin-top: -225px;
+  min-width: 4096px;
+}
+
+.x4k .overlap-group4 {
+  height: 309px;
+  position: relative;
+  width: 4096px;
+}
+
+.x4k .header-1 {
+  height: 84px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 225px;
+  width: 4096px;
+}
+
+.x4k .button {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 43px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x4k .mask-group-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 153px;
+}
+
+.x4k .button-1 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 260px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.x4k .mask-group-1-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 154px;
+}
+
+.x4k .drop-down {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 3749px;
+  position: absolute;
+  top: 0;
+  width: 277px;
+}
+
+.x4k .drop-down-1 {
+  align-items: flex-end;
+  background-image: url(../img/path-454@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 195px;
+  padding: 18px 14px;
+  width: 277px;
+}
+
+.x4k .overlap-group2 {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--white);
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  margin-left: 1.0px;
+  min-width: 246px;
+  padding: 4px 9px;
+}
+
+.x4k .bnb {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x4k .binance-smart-chain-1 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 1.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x4k .overlap-group1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 17px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x4k .bnb-1 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x4k .binance-smart-chain {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 3.18px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.x4k .overlap-group3 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  min-width: 246px;
+  padding: 4px 8.8px;
+}
+
+.x4k .bnb-2 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.x4k .overlap-group {
+  align-items: flex-start;
+  background-color: var(--salmon);
+  border-radius: 5px;
+  display: flex;
+  height: 53px;
+  margin-right: -3px;
+  margin-top: 43px;
+  min-width: 147px;
+  padding: 13px 16px;
+}
+
+.x4k .networks {
+  letter-spacing: 0;
+  line-height: 20px;
+  min-height: 24px;
+  min-width: 85px;
+  white-space: nowrap;
+}
+
+.x4k .mask {
+  align-self: center;
+  height: 8px;
+  margin-bottom: 5.0px;
+  margin-left: 8px;
+  object-fit: cover;
+  width: 16px;
+}
+
+.x4k .hub {
+  align-items: flex-start;
+  display: flex;
+  margin-right: 0.19px;
+  margin-top: 173px;
+  min-width: 1738px;
+}
+
+.x4k .overlap-group-1 {
+  height: 1646px;
+  position: relative;
+  width: 1738px;
+}
+
+.x4k .block {
+  align-items: flex-start;
+  display: flex;
+  height: 1646px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.x4k .overlap-group1-1 {
+  height: 1646px;
+  margin-top: 0;
+  position: relative;
+  width: 1738px;
+}
+
+.x4k .pump450x600 {
+  height: 1021px;
+  left: 839px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 19px;
+  transition: all 0.2s ease;
+  width: 899px;
+}
+
+.x4k .pump450x600:hover {
+  transform: translate(0, -5px);
+}
+
+.x4k .pump450x600-1 {
+  height: 1001px;
+  left: 0;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 809px;
+}
+
+.x4k .pump450x600-1:hover {
+  transform: translate(0, -5px);
+}
+
+.x4k .rectangle-613 {
+  background-color: var(--salmon);
+  border-radius: 275px;
+  height: 1231px;
+  left: 252px;
+  position: absolute;
+  top: 415px;
+  width: 1155px;
+}
+
+.x4k .rectangle-614 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 229px;
+  left: 463px;
+  position: absolute;
+  top: 471px;
+  width: 731px;
+}
+
+.x4k .text-1 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 566px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 616px;
+  white-space: nowrap;
+}
+
+.x4k .my-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 70px;
+  left: 493px;
+  letter-spacing: 0.44px;
+  line-height: 70px;
+  position: absolute;
+  top: 550px;
+  white-space: nowrap;
+}
+
+.x4k .rectangle-615 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 676px;
+  left: 302px;
+  position: absolute;
+  top: 777px;
+  width: 1055px;
+}
+
+.x4k .logo480x350 {
+  height: 478px;
+  left: 502px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 160px;
+  transition: all 0.2s ease;
+  width: 656px;
+}
+
+.x4k .logo480x350:hover {
+  transform: scale(1.1);
+}
+
+.x4k .gascan500x500 {
+  height: 165px;
+  left: 1167px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 1241px;
+  transition: all 0.2s ease;
+  width: 165px;
+}
+
+.x4k .gascan500x500:hover {
+  transform: rotate(15deg);
+}
+
+.x4k .text {
+  align-items: flex-end;
+  display: flex;
+  height: 730px;
+  left: 336px;
+  position: absolute;
+  top: 777px;
+}
+
+.x4k .flex-col {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -4.5px;
+  min-height: 729px;
+  width: 488px;
+}
+
+.x4k .overlap-group5 {
+  height: 210px;
+  margin-right: 1.78px;
+  position: relative;
+  width: 486px;
+}
+
+.x4k .overlap-group3-1 {
+  height: 210px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 486px;
+}
+
+.x4k .my {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 106px;
+  left: 0;
+  letter-spacing: 0.66px;
+  line-height: 106px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x4k .text-2 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 44px;
+  letter-spacing: 0.54px;
+  line-height: 87px;
+  position: absolute;
+  top: 111px;
+  white-space: nowrap;
+}
+
+.x4k .token-balance {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 165px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 47px;
+  white-space: nowrap;
+}
+
+.x4k .token-value {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  margin-left: 87.17px;
+  margin-top: 40px;
+  min-height: 51px;
+  min-width: 244px;
+  white-space: nowrap;
+}
+
+.x4k .price {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.54px;
+  line-height: 87px;
+  margin-right: 0.22px;
+  margin-top: 12px;
+  min-height: 99px;
+  min-width: 393px;
+  white-space: nowrap;
+}
+
+.x4k .gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  margin-right: 38.17px;
+  margin-top: 40px;
+  min-height: 51px;
+  min-width: 284px;
+  white-space: nowrap;
+}
+
+.x4k .x11-bnb {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.54px;
+  line-height: 87px;
+  margin-top: 12px;
+  min-height: 99px;
+  min-width: 329px;
+  white-space: nowrap;
+}
+
+.x4k .x24hr-volume {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 49px;
+  letter-spacing: 0.31px;
+  line-height: 49px;
+  margin-right: 10.4px;
+  margin-top: 56px;
+  min-height: 56px;
+  min-width: 294px;
+  white-space: nowrap;
+}
+
+.x4k .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -4.5px;
+  margin-left: 19px;
+  min-height: 579px;
+  width: 478px;
+}
+
+.x4k .overlap-group4-1 {
+  align-self: flex-end;
+  height: 283px;
+  position: relative;
+  width: 459px;
+}
+
+.x4k .totalgasrewardscode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 422px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x4k .overlap-group2-1 {
+  height: 283px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 459px;
+}
+
+.x4k .total-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.x4k .market-capital {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 4px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 75px;
+  white-space: nowrap;
+}
+
+.x4k .marketcapcode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 324px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 78px;
+  white-space: nowrap;
+}
+
+.x4k .liquidity-value {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 4px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 157px;
+  white-space: nowrap;
+}
+
+.x4k .avg-txn-price {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 232px;
+  white-space: nowrap;
+}
+
+.x4k .address {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 302px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 232px;
+  white-space: nowrap;
+}
+
+.x4k .liquidityvaluecode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 323px;
+  letter-spacing: 0.27px;
+  line-height: 44px;
+  position: absolute;
+  top: 157px;
+  white-space: nowrap;
+}
+
+.x4k .price-1 {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 49px;
+  letter-spacing: 0.31px;
+  line-height: 49px;
+  margin-top: 240px;
+  min-height: 56px;
+  white-space: nowrap;
+}
+/* screen - ipad */
+
+.ipad {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  display: flex;
+  height: 1111px;
+  overflow: hidden;
+  width: 1024px;
+}
+
+.ipad .overlap-group {
+  height: 1317px;
+  margin-left: -56px;
+  margin-top: -225px;
+  position: relative;
+  width: 1136px;
+}
+
+.ipad .hub {
+  align-items: flex-start;
+  display: flex;
+  height: 1107px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 210px;
+}
+
+.ipad .overlap-group1 {
+  height: 1107px;
+  position: relative;
+  width: 1136px;
+}
+
+.ipad .block {
+  align-items: flex-start;
+  display: flex;
+  height: 1107px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.ipad .overlap-group2 {
+  height: 1107px;
+  margin-top: 0;
+  position: relative;
+  width: 1136px;
+}
+
+.ipad .pump450x600 {
+  height: 678px;
+  left: 538px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 11px;
+  transition: all 0.2s ease;
+  width: 597px;
+}
+
+.ipad .pump450x600:hover {
+  transform: translate(0, -5px);
+}
+
+.ipad .pump450x600-1 {
+  height: 666px;
+  left: 0;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 539px;
+}
+
+.ipad .pump450x600-1:hover {
+  transform: translate(0, -5px);
+}
+
+.ipad .rectangle-613 {
+  background-color: var(--salmon);
+  border-radius: 275px;
+  height: 829px;
+  left: 163px;
+  position: absolute;
+  top: 278px;
+  width: 750px;
+}
+
+.ipad .rectangle-614 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 154px;
+  left: 301px;
+  position: absolute;
+  top: 316px;
+  width: 475px;
+}
+
+.ipad .text-7 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 368px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 413px;
+  white-space: nowrap;
+}
+
+.ipad .my-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 46px;
+  left: 320px;
+  letter-spacing: 0.29px;
+  line-height: 46px;
+  position: absolute;
+  top: 370px;
+  white-space: nowrap;
+}
+
+.ipad .rectangle-615 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 456px;
+  left: 196px;
+  position: absolute;
+  top: 522px;
+  width: 685px;
+}
+
+.ipad .logo480x350 {
+  height: 311px;
+  left: 326px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 107px;
+  transition: all 0.2s ease;
+  width: 426px;
+}
+
+.ipad .logo480x350:hover {
+  transform: scale(1.1);
+}
+
+.ipad .gascan500x500 {
+  height: 107px;
+  left: 758px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 834px;
+  transition: all 0.2s ease;
+  width: 107px;
+}
+
+.ipad .gascan500x500:hover {
+  transform: rotate(15deg);
+}
+
+.ipad .text {
+  align-items: flex-end;
+  display: flex;
+  height: 493px;
+  left: 218px;
+  position: absolute;
+  top: 522px;
+}
+
+.ipad .flex-col {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -4.0px;
+  min-height: 493px;
+  width: 319px;
+}
+
+.ipad .overlap-group4 {
+  height: 141px;
+  margin-right: 0.83px;
+  position: relative;
+  width: 318px;
+}
+
+.ipad .my {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 71px;
+  left: 0;
+  letter-spacing: 0.44px;
+  line-height: 71px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.ipad .token-balance {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 107px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 32px;
+  white-space: nowrap;
+}
+
+.ipad .text-8 {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 28px;
+  letter-spacing: 0.36px;
+  line-height: 57px;
+  position: absolute;
+  top: 75px;
+  white-space: nowrap;
+}
+
+.ipad .token-value {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  margin-left: 56.52px;
+  margin-top: 27px;
+  min-height: 34px;
+  min-width: 161px;
+  white-space: nowrap;
+}
+
+.ipad .price {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.36px;
+  line-height: 57px;
+  margin-top: 9px;
+  min-height: 66px;
+  min-width: 258px;
+  white-space: nowrap;
+}
+
+.ipad .gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  margin-right: 23.86px;
+  margin-top: 27px;
+  min-height: 34px;
+  min-width: 188px;
+  white-space: nowrap;
+}
+
+.ipad .x11-bnb {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.36px;
+  line-height: 57px;
+  margin-right: 0.29px;
+  margin-top: 9px;
+  min-height: 66px;
+  min-width: 216px;
+  white-space: nowrap;
+}
+
+.ipad .x24hr-volume {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 33px;
+  letter-spacing: 0.21px;
+  line-height: 33px;
+  margin-right: 1.32px;
+  margin-top: 39px;
+  min-height: 39px;
+  min-width: 199px;
+  white-space: nowrap;
+}
+
+.ipad .flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -4.0px;
+  margin-left: 9px;
+  min-height: 392px;
+  width: 312px;
+}
+
+.ipad .overlap-group5 {
+  align-self: flex-end;
+  height: 190px;
+  position: relative;
+  width: 300px;
+}
+
+.ipad .totalgasrewardscode {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 27px;
+  left: 274px;
+  letter-spacing: 0.17px;
+  line-height: 27px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.ipad .overlap-group3 {
+  height: 190px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 300px;
+}
+
+.ipad .total-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.ipad .market-capital {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 3px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 51px;
+  white-space: nowrap;
+}
+
+.ipad .marketcapcode {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 27px;
+  left: 210px;
+  letter-spacing: 0.17px;
+  line-height: 27px;
+  position: absolute;
+  top: 53px;
+  white-space: nowrap;
+}
+
+.ipad .liquidity-value {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 3px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 106px;
+  white-space: nowrap;
+}
+
+.ipad .avg-txn-price {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+}
+
+.ipad .address {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 196px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 156px;
+  white-space: nowrap;
+}
+
+.ipad .liquidityvaluecode {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 210px;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 105px;
+  white-space: nowrap;
+}
+
+.ipad .price-1 {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 33px;
+  letter-spacing: 0.21px;
+  line-height: 33px;
+  margin-top: 162px;
+  min-height: 39px;
+  white-space: nowrap;
+}
+
+.ipad .header {
+  align-items: flex-start;
+  display: flex;
+  height: 309px;
+  left: 56px;
+  position: absolute;
+  top: 0;
+}
+
+.ipad .overlap-group5-1 {
+  height: 309px;
+  position: relative;
+  width: 1024px;
+}
+
+.ipad .header-1 {
+  height: 84px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 225px;
+  width: 1024px;
+}
+
+.ipad .button {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 43px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.ipad .mask-group-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 153px;
+}
+
+.ipad .button-1 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  left: 260px;
+  min-width: 204px;
+  padding: 0 22px;
+  position: absolute;
+  top: 240px;
+}
+
+.ipad .mask-group-1-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 154px;
+}
+
+.ipad .drop-down {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 677px;
+  position: absolute;
+  top: 0;
+  width: 277px;
+}
+
+.ipad .drop-down-1 {
+  align-items: flex-end;
+  background-image: url(../img/path-454-3@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 195px;
+  padding: 18px 14px;
+  width: 277px;
+}
+
+.ipad .overlap-group2-1 {
+  align-items: flex-start;
+  align-self: center;
+  background-color: var(--white);
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  margin-left: 1.0px;
+  min-width: 246px;
+  padding: 4px 9px;
+}
+
+.ipad .bnb {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.ipad .binance-smart-chain {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 1.21px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.ipad .overlap-group4-1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 17px;
+  min-width: 246px;
+  padding: 3.9px 8.8px;
+}
+
+.ipad .bnb-1 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.ipad .binance-smart-chain-1 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 3.16px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.ipad .overlap-group3-1 {
+  align-items: flex-start;
+  background-image: url(../img/path-451@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 42px;
+  justify-content: flex-end;
+  margin-top: 16px;
+  min-width: 246px;
+  padding: 3.9px 8.8px;
+}
+
+.ipad .bnb-2 {
+  height: 33px;
+  object-fit: cover;
+  width: 33px;
+}
+
+.ipad .binance-smart-chain-2 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: center;
+  letter-spacing: 0.12px;
+  line-height: 19px;
+  margin-left: 10px;
+  margin-top: 3.12px;
+  min-height: 23px;
+  min-width: 184px;
+  white-space: nowrap;
+}
+
+.ipad .overlap-group1-1 {
+  align-items: flex-start;
+  background-color: var(--salmon);
+  border-radius: 5px;
+  display: flex;
+  height: 53px;
+  margin-right: -3px;
+  margin-top: 42px;
+  min-width: 147px;
+  padding: 13px 16px;
+}
+
+.ipad .networks {
+  letter-spacing: 0;
+  line-height: 20px;
+  min-height: 24px;
+  min-width: 85px;
+  white-space: nowrap;
+}
+
+.ipad .mask {
+  align-self: center;
+  height: 8px;
+  margin-bottom: 5.0px;
+  margin-left: 8px;
+  object-fit: cover;
+  width: 16px;
+}
+/* screen - iphone */
+
+.iphone {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  display: flex;
+  height: 1032px;
+  overflow: hidden;
+  width: 375px;
+}
+
+.iphone .overlap-group-1 {
+  height: 1022px;
+  margin-left: -40px;
+  position: relative;
+  width: 490px;
+}
+
+.iphone .hub {
+  align-items: flex-start;
+  display: flex;
+  height: 954px;
+  left: 0;
+  position: absolute;
+  top: 68px;
+}
+
+.iphone .overlap-group {
+  height: 954px;
+  position: relative;
+  width: 490px;
+}
+
+.iphone .block {
+  align-items: flex-end;
+  display: flex;
+  height: 954px;
+  justify-content: flex-end;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.iphone .pump450x600 {
+  height: 369px;
+  left: 165px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 325px;
+}
+
+.iphone .pump450x600:hover {
+  transform: translate(0, -5px);
+}
+
+.iphone .pump450x600-1 {
+  height: 322px;
+  left: 0;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 261px;
+}
+
+.iphone .pump450x600-1:hover {
+  transform: translate(0, -5px);
+}
+
+.iphone .rectangle-613 {
+  background-color: var(--salmon);
+  border-radius: 275px;
+  height: 755px;
+  left: 69px;
+  position: absolute;
+  top: 199px;
+  width: 316px;
+}
+
+.iphone .rectangle-614 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 140px;
+  left: 127px;
+  position: absolute;
+  top: 233px;
+  width: 200px;
+}
+
+.iphone .text-9 {
+  -webkit-text-stroke: 1px var(--silver);
+  color: var(--salmon);
+  font-family: var(--font-family-arial-regular);
+  font-size: 13px;
+  left: 155px;
+  letter-spacing: 0.08px;
+  line-height: 13px;
+  position: absolute;
+  top: 320px;
+  white-space: nowrap;
+}
+
+.iphone .my-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 143px;
+  letter-spacing: 0.11px;
+  line-height: 18px;
+  position: absolute;
+  top: 295px;
+  white-space: nowrap;
+}
+
+.iphone .rectangle-615 {
+  background-color: var(--pale-sky);
+  border-radius: 57px;
+  height: 415px;
+  left: 83px;
+  position: absolute;
+  top: 421px;
+  width: 289px;
+}
+
+.iphone .logo480x350 {
+  height: 131px;
+  left: 138px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 183px;
+  transition: all 0.2s ease;
+  width: 180px;
+}
+
+.iphone .logo480x350:hover {
+  transform: scale(1.1);
+}
+
+.iphone .gascan500x500 {
+  height: 96px;
+  left: 261px;
+  object-fit: cover;
+  pointer-events: auto;
+  position: absolute;
+  top: 699px;
+  transition: all 0.2s ease;
+  width: 96px;
+}
+
+.iphone .gascan500x500:hover {
+  transform: rotate(15deg);
+}
+
+.iphone .text {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  left: 92px;
+  position: absolute;
+  top: 421px;
+  width: 271px;
+}
+
+.iphone .flex-col {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-right: 2.9px;
+  margin-top: 1px;
+  min-height: 166px;
+  width: 268px;
+}
+
+.iphone .overlap-group3 {
+  align-self: flex-start;
+  height: 52px;
+  position: relative;
+  width: 137px;
+}
+
+.iphone .my {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 0;
+  letter-spacing: 0.18px;
+  line-height: 29px;
+  position: absolute;
+  top: 0;
+  white-space: nowrap;
+}
+
+.iphone .token-balance {
+  -webkit-text-stroke: 1px var(--silver);
+  left: 22px;
+  letter-spacing: 0.11px;
+  line-height: 17px;
+  position: absolute;
+  top: 31px;
+  white-space: nowrap;
+}
+
+.iphone .flex-row {
+  align-items: flex-end;
+  display: flex;
+  height: 54px;
+  margin-top: 15px;
+  min-width: 256px;
+}
+
+.iphone .text-10 {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: flex-start;
+  letter-spacing: 0.14px;
+  line-height: 23px;
+  min-height: 28px;
+  min-width: 118px;
+  white-space: nowrap;
+}
+
+.iphone .total-gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 12px;
+  margin-left: 14px;
+  min-height: 30px;
+  min-width: 111px;
+  white-space: nowrap;
+}
+
+.iphone .totalgasrewardscode {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 11px;
+  margin-bottom: 5.0px;
+  margin-left: 4px;
+  min-height: 26px;
+  min-width: 8px;
+  white-space: nowrap;
+}
+
+.iphone .flex-row-1 {
+  align-items: flex-start;
+  display: flex;
+  height: 26px;
+  margin-right: 26.96px;
+  margin-top: 16px;
+  min-width: 96px;
+}
+
+.iphone .market-capital {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 11px;
+  min-height: 14px;
+  min-width: 77px;
+  white-space: nowrap;
+}
+
+.iphone .marketcapcode {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: flex-end;
+  letter-spacing: 0.07px;
+  line-height: 11px;
+  margin-left: 10px;
+  min-height: 26px;
+  min-width: 8px;
+  white-space: nowrap;
+}
+
+.iphone .flex-row-2 {
+  align-items: flex-start;
+  display: flex;
+  height: 264px;
+  margin-top: 2px;
+  min-width: 245px;
+}
+
+.iphone .flex-col-1 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  min-height: 264px;
+  width: 111px;
+}
+
+.iphone .token-value {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.11px;
+  line-height: 17px;
+  min-height: 21px;
+  min-width: 95px;
+  white-space: nowrap;
+}
+
+.iphone .price {
+  -webkit-text-stroke: 1px var(--silver);
+  align-self: flex-start;
+  letter-spacing: 0.14px;
+  line-height: 23px;
+  margin-top: 3px;
+  min-height: 28px;
+  white-space: nowrap;
+}
+
+.iphone .gas-rewards {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.11px;
+  line-height: 17px;
+  margin-top: 71px;
+  min-height: 21px;
+  min-width: 111px;
+  white-space: nowrap;
+}
+
+.iphone .x11-bnb {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.14px;
+  line-height: 23px;
+  margin-right: 4.87px;
+  margin-top: 3px;
+  min-height: 28px;
+  min-width: 89px;
+  white-space: nowrap;
+}
+
+.iphone .x24hr-volume {
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 14px;
+  letter-spacing: 0.09px;
+  line-height: 14px;
+  margin-right: 2.13px;
+  margin-top: 68px;
+  min-height: 18px;
+  min-width: 85px;
+  white-space: nowrap;
+}
+
+.iphone .flex-col-2 {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.0px;
+  margin-left: 1px;
+  min-height: 244px;
+  width: 86px;
+}
+
+.iphone .liquidity-value {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 11px;
+  margin-left: 6.37px;
+  min-height: 26px;
+  min-width: 80px;
+  white-space: nowrap;
+}
+
+.iphone .avg-txn-price {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 11px;
+  margin-left: 0.12px;
+  margin-top: 21px;
+  min-height: 14px;
+  min-width: 76px;
+  white-space: nowrap;
+}
+
+.iphone .price-1 {
+  align-self: flex-start;
+  color: var(--pale-sky);
+  font-family: var(--font-family-arial-regular);
+  font-size: 13px;
+  letter-spacing: 0.08px;
+  line-height: 13px;
+  margin-top: 165px;
+  min-height: 17px;
+  white-space: nowrap;
+}
+
+.iphone .flex-col-3 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1px;
+  margin-top: 20.33px;
+  min-height: 64px;
+  width: 44px;
+}
+
+.iphone .liquidityvaluecode {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 12px;
+  margin-left: 6.0px;
+  min-height: 30px;
+  white-space: nowrap;
+}
+
+.iphone .address {
+  -webkit-text-stroke: 1px var(--silver);
+  letter-spacing: 0.07px;
+  line-height: 12px;
+  margin-top: 18px;
+  min-height: 16px;
+  white-space: nowrap;
+}
+
+.iphone .header {
+  align-items: flex-end;
+  background-image: url(../img/header-4@1x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 84px;
+  left: 40px;
+  min-width: 375px;
+  padding: 14px 4px;
+  position: absolute;
+  top: 0;
+}
+
+.iphone .button {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  min-width: 179px;
+  padding: 0 22px;
+}
+
+.iphone .mask-group-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 128px;
+}
+
+.iphone .button-1 {
+  align-items: flex-start;
+  background-color: var(--dawn-pink);
+  border-radius: 28px;
+  display: flex;
+  height: 55px;
+  margin-left: 5px;
+  min-width: 182px;
+  padding: 0 22px;
+}
+
+.iphone .mask-group-1-1 {
+  height: 45px;
+  object-fit: cover;
+  width: 131px;
+}
+@media screen and (max-width: 1023px) {
+  .screen.x4k { 
+    display: none;
+   }
+  .screen.x1920 { 
+    display: none;
+   }
+  .screen.x1440 { 
+    display: none;
+   }
+  .screen.ipad { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .screen.x4k { 
+    display: none;
+   }
+  .screen.x1920 { 
+    display: none;
+   }
+  .screen.x1440 { 
+    display: none;
+   }
+  .screen.iphone { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1440px) and (max-width: 1919px) {
+  .screen.x4k { 
+    display: none;
+   }
+  .screen.x1920 { 
+    display: none;
+   }
+  .screen.ipad { 
+    display: none;
+   }
+  .screen.iphone { 
+    display: none;
+   }
+}
+@media screen and (min-width: 1920px) and (max-width: 4095px) {
+  .screen.x4k { 
+    display: none;
+   }
+  .screen.x1440 { 
+    display: none;
+   }
+  .screen.ipad { 
+    display: none;
+   }
+  .screen.iphone { 
+    display: none;
+   }
+}
+@media screen and (min-width: 4096px) {
+  .screen.x1920 { 
+    display: none;
+   }
+  .screen.x1440 { 
+    display: none;
+   }
+  .screen.ipad { 
+    display: none;
+   }
+  .screen.iphone { 
+    display: none;
+   }
+}
