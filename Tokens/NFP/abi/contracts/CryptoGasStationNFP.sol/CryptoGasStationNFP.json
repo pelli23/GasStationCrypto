@@ -10,6 +10,11 @@
         "internalType": "contract ERC20",
         "name": "_usdc",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_payTo",
+        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -283,6 +288,19 @@
   {
     "inputs": [
       {
+        "internalType": "bytes32",
+        "name": "c__0x8022e392",
+        "type": "bytes32"
+      }
+    ],
+    "name": "c_0x8022e392",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "tokenId",
         "type": "uint256"
@@ -313,6 +331,25 @@
         "internalType": "uint256[]",
         "name": "",
         "type": "uint256[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint8",
+        "name": "_rarity",
+        "type": "uint8"
+      }
+    ],
+    "name": "getPatronRarityPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -355,7 +392,7 @@
         "type": "address"
       }
     ],
-    "name": "mintpatron",
+    "name": "mintPatron",
     "outputs": [
       {
         "internalType": "uint256",
@@ -463,6 +500,19 @@
         "internalType": "uint16",
         "name": "",
         "type": "uint16"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "payTo",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
       }
     ],
     "stateMutability": "view",
@@ -729,6 +779,32 @@
     "name": "transferOwnership",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_payTo",
+        "type": "address"
+      }
+    ],
+    "name": "updatePayTo",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "usdc",
+    "outputs": [
+      {
+        "internalType": "contract ERC20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   }
 ]

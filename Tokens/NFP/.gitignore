@@ -6,3 +6,5 @@ yarn-error.log
 #Hardhat files
 cache
 deployments/localhost
+coverage.json
+coverage

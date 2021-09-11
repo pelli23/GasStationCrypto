@@ -74,24 +74,32 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
      */
     mapping(uint8 => uint256) public patronRarityPrice;
 
-    ERC20 usdc;
+    ERC20 public usdc;
+
+    address public payTo;
 
     event BuyPatron(address _owner, uint256 _tokenId, uint8 _rarity);
 
     modifier rarityExists(uint8 _rarity) {
-        require(0 < _rarity && _rarity <= 3, "rarity doesn't exist");
+        require(
+            0 < _rarity && _rarity <= 3,
+            "CryptoGasStationNFP: rarity doesn't exist"
+        );
         _;
     }
 
-    constructor(string memory _initialBaseURI, ERC20 _usdc)
-        ERC721('Gas Station NFPs', 'NFP')
-    {
+    constructor(
+        string memory _initialBaseURI,
+        ERC20 _usdc,
+        address _payTo
+    ) ERC721('Gas Station NFPs', 'NFP') {
         baseURI = _initialBaseURI;
         usdc = _usdc;
+        payTo = _payTo;
 
-        _setAmountTotal(1, 500);
-        _setAmountTotal(2, 38);
-        _setAmountTotal(3, 12);
+        _setAmountTotal(COMMON, 500);
+        _setAmountTotal(RARE, 38);
+        _setAmountTotal(LEGENDARY, 12);
     }
 
     /**
@@ -181,36 +189,45 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
     {
         require(
             _amountTotal >= amountMinted[_rarity],
-            'NFPs: minted NFPs amount is larger than this total limit'
+            'CryptoGasStationNFP: minted NFPs amount is larger than this total limit'
         );
         amountTotal[_rarity] = _amountTotal;
     }
 
-    function _getPatronRarityPrice(uint8 _rarity)
-        internal
+    /**
+     * @dev Update payTo address
+     * @param _payTo new address to send payments to
+     */
+    function updatePayTo(address _payTo) external onlyOwner {
+        payTo = _payTo;
+    }
+
+    function getPatronRarityPrice(uint8 _rarity)
+        public
         view
         rarityExists(_rarity)
         returns (uint256)
     {
         uint256 currentSupply = amountMinted[_rarity];
+        uint8 usdcDecimals = usdc.decimals();
 
         if (_rarity == LEGENDARY) {
             return
-                uint256(750).mul(10**usdc.decimals()).add(
-                    uint256(375).mul(10**usdc.decimals()).mul(currentSupply)
+                uint256(750).mul(10**usdcDecimals).add(
+                    uint256(375).mul(10**usdcDecimals).mul(currentSupply)
                 );
         }
 
         if (_rarity == RARE) {
             return
-                uint256(250).mul(10**usdc.decimals()).add(
-                    uint256(39).mul(10**usdc.decimals()).mul(currentSupply)
+                uint256(250).mul(10**usdcDecimals).add(
+                    uint256(39).mul(10**usdcDecimals).mul(currentSupply)
                 );
         }
 
         return
-            uint256(25).mul(10**usdc.decimals()).add(
-                uint256(25).mul(10**usdc.decimals()).mul(currentSupply / 125)
+            uint256(25).mul(10**usdcDecimals).add(
+                uint256(25).mul(10**usdcDecimals).mul(currentSupply / 125)
             );
     }
 
@@ -225,20 +242,15 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
         rarityExists(_rarity)
         returns (uint256)
     {
-        uint256 msgValue = msg.value;
         address msgSender = msg.sender;
         uint16 _amountMinted = amountMinted[_rarity];
         uint16 _amountTotal = amountTotal[_rarity];
         require(
             _amountMinted < _amountTotal,
-            'PatronMarket: all patrons in this rarity are sold'
+            'CryptoGasStationNFP: all patrons in this rarity are sold'
         );
 
-        usdc.safeTransferFrom(
-            msg.sender,
-            address(this),
-            _getPatronRarityPrice(_rarity)
-        );
+        usdc.safeTransferFrom(msg.sender, payTo, getPatronRarityPrice(_rarity));
 
         tokenId = tokenId.add(1);
         _amountMinted = _amountMinted + 1;
@@ -268,7 +280,7 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
         uint16 _amountTotal = amountTotal[_rarity];
         require(
             _amountMinted < _amountTotal,
-            'PatronMarket: all patrons in this rarity are sold'
+            'CryptoGasStationNFP: all patrons in this rarity are sold'
         );
         tokenId = tokenId.add(1);
         _amountMinted = _amountMinted + 1;

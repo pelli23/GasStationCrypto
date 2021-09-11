@@ -31,16 +31,19 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     "balanceOf(address)": FunctionFragment;
     "baseURI()": FunctionFragment;
     "buyPatron(uint8)": FunctionFragment;
+    "c_0x8022e392(bytes32)": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
     "getNFPsOfOwner(address)": FunctionFragment;
+    "getPatronRarityPrice(uint8)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
-    "mintpatron(uint8,address)": FunctionFragment;
+    "mintPatron(uint8,address)": FunctionFragment;
     "name()": FunctionFragment;
     "owner()": FunctionFragment;
     "ownerOf(uint256)": FunctionFragment;
     "patronRarity(uint256)": FunctionFragment;
     "patronRarityPrice(uint8)": FunctionFragment;
     "patronTokenIdInRarity(uint256)": FunctionFragment;
+    "payTo()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
     "safeTransferFrom(address,address,uint256)": FunctionFragment;
     "setAmountTotal(uint8,uint16)": FunctionFragment;
@@ -55,6 +58,8 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     "totalSupply()": FunctionFragment;
     "transferFrom(address,address,uint256)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
+    "updatePayTo(address)": FunctionFragment;
+    "usdc()": FunctionFragment;
   };
 
   encodeFunctionData(functionFragment: "COMMON", values?: undefined): string;
@@ -79,6 +84,10 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     values: [BigNumberish]
   ): string;
   encodeFunctionData(
+    functionFragment: "c_0x8022e392",
+    values: [BytesLike]
+  ): string;
+  encodeFunctionData(
     functionFragment: "getApproved",
     values: [BigNumberish]
   ): string;
@@ -87,11 +96,15 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     values: [string]
   ): string;
   encodeFunctionData(
+    functionFragment: "getPatronRarityPrice",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
     functionFragment: "isApprovedForAll",
     values: [string, string]
   ): string;
   encodeFunctionData(
-    functionFragment: "mintpatron",
+    functionFragment: "mintPatron",
     values: [BigNumberish, string]
   ): string;
   encodeFunctionData(functionFragment: "name", values?: undefined): string;
@@ -112,6 +125,7 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     functionFragment: "patronTokenIdInRarity",
     values: [BigNumberish]
   ): string;
+  encodeFunctionData(functionFragment: "payTo", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "renounceOwnership",
     values?: undefined
@@ -159,6 +173,8 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     functionFragment: "transferOwnership",
     values: [string]
   ): string;
+  encodeFunctionData(functionFragment: "updatePayTo", values: [string]): string;
+  encodeFunctionData(functionFragment: "usdc", values?: undefined): string;
 
   decodeFunctionResult(functionFragment: "COMMON", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "LEGENDARY", data: BytesLike): Result;
@@ -176,6 +192,10 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
   decodeFunctionResult(functionFragment: "baseURI", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "buyPatron", data: BytesLike): Result;
   decodeFunctionResult(
+    functionFragment: "c_0x8022e392",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "getApproved",
     data: BytesLike
   ): Result;
@@ -184,10 +204,14 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
+    functionFragment: "getPatronRarityPrice",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
     functionFragment: "isApprovedForAll",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "mintpatron", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: "mintPatron", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "ownerOf", data: BytesLike): Result;
@@ -203,6 +227,7 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     functionFragment: "patronTokenIdInRarity",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "payTo", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "renounceOwnership",
     data: BytesLike
@@ -247,6 +272,11 @@ interface CryptoGasStationNFPInterface extends ethers.utils.Interface {
     functionFragment: "transferOwnership",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(
+    functionFragment: "updatePayTo",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(functionFragment: "usdc", data: BytesLike): Result;
 
   events: {
     "Approval(address,address,uint256)": EventFragment;
@@ -338,6 +368,11 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
+    c_0x8022e392(
+      c__0x8022e392: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<[void]>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -348,13 +383,18 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
+    getPatronRarityPrice(
+      _rarity: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<[BigNumber]>;
+
     isApprovedForAll(
       owner: string,
       operator: string,
       overrides?: CallOverrides
     ): Promise<[boolean]>;
 
-    mintpatron(
+    mintPatron(
       _rarity: BigNumberish,
       _to: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -383,6 +423,8 @@ export class CryptoGasStationNFP extends BaseContract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<[number]>;
+
+    payTo(overrides?: CallOverrides): Promise<[string]>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -458,6 +500,13 @@ export class CryptoGasStationNFP extends BaseContract {
       newOwner: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
+
+    updatePayTo(
+      _payTo: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    usdc(overrides?: CallOverrides): Promise<[string]>;
   };
 
   COMMON(overrides?: CallOverrides): Promise<number>;
@@ -485,6 +534,11 @@ export class CryptoGasStationNFP extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  c_0x8022e392(
+    c__0x8022e392: BytesLike,
+    overrides?: CallOverrides
+  ): Promise<void>;
+
   getApproved(
     tokenId: BigNumberish,
     overrides?: CallOverrides
@@ -495,13 +549,18 @@ export class CryptoGasStationNFP extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
+  getPatronRarityPrice(
+    _rarity: BigNumberish,
+    overrides?: CallOverrides
+  ): Promise<BigNumber>;
+
   isApprovedForAll(
     owner: string,
     operator: string,
     overrides?: CallOverrides
   ): Promise<boolean>;
 
-  mintpatron(
+  mintPatron(
     _rarity: BigNumberish,
     _to: string,
     overrides?: Overrides & { from?: string | Promise<string> }
@@ -524,6 +583,8 @@ export class CryptoGasStationNFP extends BaseContract {
     arg0: BigNumberish,
     overrides?: CallOverrides
   ): Promise<number>;
+
+  payTo(overrides?: CallOverrides): Promise<string>;
 
   renounceOwnership(
     overrides?: Overrides & { from?: string | Promise<string> }
@@ -597,6 +658,13 @@ export class CryptoGasStationNFP extends BaseContract {
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
+  updatePayTo(
+    _payTo: string,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  usdc(overrides?: CallOverrides): Promise<string>;
+
   callStatic: {
     COMMON(overrides?: CallOverrides): Promise<number>;
 
@@ -626,6 +694,11 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    c_0x8022e392(
+      c__0x8022e392: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -636,13 +709,18 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
+    getPatronRarityPrice(
+      _rarity: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     isApprovedForAll(
       owner: string,
       operator: string,
       overrides?: CallOverrides
     ): Promise<boolean>;
 
-    mintpatron(
+    mintPatron(
       _rarity: BigNumberish,
       _to: string,
       overrides?: CallOverrides
@@ -668,6 +746,8 @@ export class CryptoGasStationNFP extends BaseContract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<number>;
+
+    payTo(overrides?: CallOverrides): Promise<string>;
 
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
 
@@ -738,6 +818,10 @@ export class CryptoGasStationNFP extends BaseContract {
       newOwner: string,
       overrides?: CallOverrides
     ): Promise<void>;
+
+    updatePayTo(_payTo: string, overrides?: CallOverrides): Promise<void>;
+
+    usdc(overrides?: CallOverrides): Promise<string>;
   };
 
   filters: {
@@ -818,6 +902,11 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
+    c_0x8022e392(
+      c__0x8022e392: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -828,13 +917,18 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
+    getPatronRarityPrice(
+      _rarity: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<BigNumber>;
+
     isApprovedForAll(
       owner: string,
       operator: string,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    mintpatron(
+    mintPatron(
       _rarity: BigNumberish,
       _to: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -863,6 +957,8 @@ export class CryptoGasStationNFP extends BaseContract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<BigNumber>;
+
+    payTo(overrides?: CallOverrides): Promise<BigNumber>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -938,6 +1034,13 @@ export class CryptoGasStationNFP extends BaseContract {
       newOwner: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
+
+    updatePayTo(
+      _payTo: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    usdc(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -975,6 +1078,11 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
+    c_0x8022e392(
+      c__0x8022e392: BytesLike,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     getApproved(
       tokenId: BigNumberish,
       overrides?: CallOverrides
@@ -985,13 +1093,18 @@ export class CryptoGasStationNFP extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
+    getPatronRarityPrice(
+      _rarity: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<PopulatedTransaction>;
+
     isApprovedForAll(
       owner: string,
       operator: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    mintpatron(
+    mintPatron(
       _rarity: BigNumberish,
       _to: string,
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -1020,6 +1133,8 @@ export class CryptoGasStationNFP extends BaseContract {
       arg0: BigNumberish,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    payTo(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
@@ -1095,5 +1210,12 @@ export class CryptoGasStationNFP extends BaseContract {
       newOwner: string,
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
+
+    updatePayTo(
+      _payTo: string,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    usdc(overrides?: CallOverrides): Promise<PopulatedTransaction>;
   };
 }

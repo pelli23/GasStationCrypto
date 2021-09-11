@@ -26,10 +26,7 @@ abstract contract Context {
     }
 }
 
-
 // File @openzeppelin/contracts/access/Ownable.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -48,7 +45,10 @@ pragma solidity ^0.8.0;
 abstract contract Ownable is Context {
     address private _owner;
 
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
+    event OwnershipTransferred(
+        address indexed previousOwner,
+        address indexed newOwner
+    );
 
     /**
      * @dev Initializes the contract setting the deployer as the initial owner.
@@ -68,7 +68,7 @@ abstract contract Ownable is Context {
      * @dev Throws if called by any account other than the owner.
      */
     modifier onlyOwner() {
-        require(owner() == _msgSender(), "Ownable: caller is not the owner");
+        require(owner() == _msgSender(), 'Ownable: caller is not the owner');
         _;
     }
 
@@ -88,7 +88,10 @@ abstract contract Ownable is Context {
      * Can only be called by the current owner.
      */
     function transferOwnership(address newOwner) public virtual onlyOwner {
-        require(newOwner != address(0), "Ownable: new owner is the zero address");
+        require(
+            newOwner != address(0),
+            'Ownable: new owner is the zero address'
+        );
         _setOwner(newOwner);
     }
 
@@ -99,10 +102,7 @@ abstract contract Ownable is Context {
     }
 }
 
-
 // File @openzeppelin/contracts/utils/introspection/IERC165.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -127,10 +127,7 @@ interface IERC165 {
     function supportsInterface(bytes4 interfaceId) external view returns (bool);
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/IERC721.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -141,17 +138,29 @@ interface IERC721 is IERC165 {
     /**
      * @dev Emitted when `tokenId` token is transferred from `from` to `to`.
      */
-    event Transfer(address indexed from, address indexed to, uint256 indexed tokenId);
+    event Transfer(
+        address indexed from,
+        address indexed to,
+        uint256 indexed tokenId
+    );
 
     /**
      * @dev Emitted when `owner` enables `approved` to manage the `tokenId` token.
      */
-    event Approval(address indexed owner, address indexed approved, uint256 indexed tokenId);
+    event Approval(
+        address indexed owner,
+        address indexed approved,
+        uint256 indexed tokenId
+    );
 
     /**
      * @dev Emitted when `owner` enables or disables (`approved`) `operator` to manage all of its assets.
      */
-    event ApprovalForAll(address indexed owner, address indexed operator, bool approved);
+    event ApprovalForAll(
+        address indexed owner,
+        address indexed operator,
+        bool approved
+    );
 
     /**
      * @dev Returns the number of tokens in ``owner``'s account.
@@ -229,7 +238,10 @@ interface IERC721 is IERC165 {
      *
      * - `tokenId` must exist.
      */
-    function getApproved(uint256 tokenId) external view returns (address operator);
+    function getApproved(uint256 tokenId)
+        external
+        view
+        returns (address operator);
 
     /**
      * @dev Approve or remove `operator` as an operator for the caller.
@@ -248,7 +260,10 @@ interface IERC721 is IERC165 {
      *
      * See {setApprovalForAll}
      */
-    function isApprovedForAll(address owner, address operator) external view returns (bool);
+    function isApprovedForAll(address owner, address operator)
+        external
+        view
+        returns (bool);
 
     /**
      * @dev Safely transfers `tokenId` token from `from` to `to`.
@@ -271,10 +286,7 @@ interface IERC721 is IERC165 {
     ) external;
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/IERC721Receiver.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -301,10 +313,7 @@ interface IERC721Receiver {
     ) external returns (bytes4);
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -329,10 +338,7 @@ interface IERC721Metadata is IERC721 {
     function tokenURI(uint256 tokenId) external view returns (string memory);
 }
 
-
 // File @openzeppelin/contracts/utils/Address.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -386,10 +392,16 @@ library Address {
      * https://solidity.readthedocs.io/en/v0.5.11/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].
      */
     function sendValue(address payable recipient, uint256 amount) internal {
-        require(address(this).balance >= amount, "Address: insufficient balance");
+        require(
+            address(this).balance >= amount,
+            'Address: insufficient balance'
+        );
 
-        (bool success, ) = recipient.call{value: amount}("");
-        require(success, "Address: unable to send value, recipient may have reverted");
+        (bool success, ) = recipient.call{value: amount}('');
+        require(
+            success,
+            'Address: unable to send value, recipient may have reverted'
+        );
     }
 
     /**
@@ -410,8 +422,11 @@ library Address {
      *
      * _Available since v3.1._
      */
-    function functionCall(address target, bytes memory data) internal returns (bytes memory) {
-        return functionCall(target, data, "Address: low-level call failed");
+    function functionCall(address target, bytes memory data)
+        internal
+        returns (bytes memory)
+    {
+        return functionCall(target, data, 'Address: low-level call failed');
     }
 
     /**
@@ -444,7 +459,13 @@ library Address {
         bytes memory data,
         uint256 value
     ) internal returns (bytes memory) {
-        return functionCallWithValue(target, data, value, "Address: low-level call with value failed");
+        return
+            functionCallWithValue(
+                target,
+                data,
+                value,
+                'Address: low-level call with value failed'
+            );
     }
 
     /**
@@ -459,10 +480,15 @@ library Address {
         uint256 value,
         string memory errorMessage
     ) internal returns (bytes memory) {
-        require(address(this).balance >= value, "Address: insufficient balance for call");
-        require(isContract(target), "Address: call to non-contract");
+        require(
+            address(this).balance >= value,
+            'Address: insufficient balance for call'
+        );
+        require(isContract(target), 'Address: call to non-contract');
 
-        (bool success, bytes memory returndata) = target.call{value: value}(data);
+        (bool success, bytes memory returndata) = target.call{value: value}(
+            data
+        );
         return verifyCallResult(success, returndata, errorMessage);
     }
 
@@ -472,8 +498,17 @@ library Address {
      *
      * _Available since v3.3._
      */
-    function functionStaticCall(address target, bytes memory data) internal view returns (bytes memory) {
-        return functionStaticCall(target, data, "Address: low-level static call failed");
+    function functionStaticCall(address target, bytes memory data)
+        internal
+        view
+        returns (bytes memory)
+    {
+        return
+            functionStaticCall(
+                target,
+                data,
+                'Address: low-level static call failed'
+            );
     }
 
     /**
@@ -487,7 +522,7 @@ library Address {
         bytes memory data,
         string memory errorMessage
     ) internal view returns (bytes memory) {
-        require(isContract(target), "Address: static call to non-contract");
+        require(isContract(target), 'Address: static call to non-contract');
 
         (bool success, bytes memory returndata) = target.staticcall(data);
         return verifyCallResult(success, returndata, errorMessage);
@@ -499,8 +534,16 @@ library Address {
      *
      * _Available since v3.4._
      */
-    function functionDelegateCall(address target, bytes memory data) internal returns (bytes memory) {
-        return functionDelegateCall(target, data, "Address: low-level delegate call failed");
+    function functionDelegateCall(address target, bytes memory data)
+        internal
+        returns (bytes memory)
+    {
+        return
+            functionDelegateCall(
+                target,
+                data,
+                'Address: low-level delegate call failed'
+            );
     }
 
     /**
@@ -514,7 +557,7 @@ library Address {
         bytes memory data,
         string memory errorMessage
     ) internal returns (bytes memory) {
-        require(isContract(target), "Address: delegate call to non-contract");
+        require(isContract(target), 'Address: delegate call to non-contract');
 
         (bool success, bytes memory returndata) = target.delegatecall(data);
         return verifyCallResult(success, returndata, errorMessage);
@@ -549,10 +592,7 @@ library Address {
     }
 }
 
-
 // File @openzeppelin/contracts/utils/Strings.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -560,7 +600,7 @@ pragma solidity ^0.8.0;
  * @dev String operations.
  */
 library Strings {
-    bytes16 private constant _HEX_SYMBOLS = "0123456789abcdef";
+    bytes16 private constant _HEX_SYMBOLS = '0123456789abcdef';
 
     /**
      * @dev Converts a `uint256` to its ASCII `string` decimal representation.
@@ -570,7 +610,7 @@ library Strings {
         // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol
 
         if (value == 0) {
-            return "0";
+            return '0';
         }
         uint256 temp = value;
         uint256 digits;
@@ -592,7 +632,7 @@ library Strings {
      */
     function toHexString(uint256 value) internal pure returns (string memory) {
         if (value == 0) {
-            return "0x00";
+            return '0x00';
         }
         uint256 temp = value;
         uint256 length = 0;
@@ -606,23 +646,24 @@ library Strings {
     /**
      * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.
      */
-    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {
+    function toHexString(uint256 value, uint256 length)
+        internal
+        pure
+        returns (string memory)
+    {
         bytes memory buffer = new bytes(2 * length + 2);
-        buffer[0] = "0";
-        buffer[1] = "x";
+        buffer[0] = '0';
+        buffer[1] = 'x';
         for (uint256 i = 2 * length + 1; i > 1; --i) {
             buffer[i] = _HEX_SYMBOLS[value & 0xf];
             value >>= 4;
         }
-        require(value == 0, "Strings: hex length insufficient");
+        require(value == 0, 'Strings: hex length insufficient');
         return string(buffer);
     }
 }
 
-
 // File @openzeppelin/contracts/utils/introspection/ERC165.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -644,23 +685,20 @@ abstract contract ERC165 is IERC165 {
     /**
      * @dev See {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override returns (bool) {
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override
+        returns (bool)
+    {
         return interfaceId == type(IERC165).interfaceId;
     }
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/ERC721.sol@v4.3.1
 
-// SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
-
-
-
-
-
-
 
 /**
  * @dev Implementation of https://eips.ethereum.org/EIPS/eip-721[ERC721] Non-Fungible Token Standard, including
@@ -700,7 +738,13 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(ERC165, IERC165) returns (bool) {
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(ERC165, IERC165)
+        returns (bool)
+    {
         return
             interfaceId == type(IERC721).interfaceId ||
             interfaceId == type(IERC721Metadata).interfaceId ||
@@ -710,17 +754,35 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC721-balanceOf}.
      */
-    function balanceOf(address owner) public view virtual override returns (uint256) {
-        require(owner != address(0), "ERC721: balance query for the zero address");
+    function balanceOf(address owner)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        require(
+            owner != address(0),
+            'ERC721: balance query for the zero address'
+        );
         return _balances[owner];
     }
 
     /**
      * @dev See {IERC721-ownerOf}.
      */
-    function ownerOf(uint256 tokenId) public view virtual override returns (address) {
+    function ownerOf(uint256 tokenId)
+        public
+        view
+        virtual
+        override
+        returns (address)
+    {
         address owner = _owners[tokenId];
-        require(owner != address(0), "ERC721: owner query for nonexistent token");
+        require(
+            owner != address(0),
+            'ERC721: owner query for nonexistent token'
+        );
         return owner;
     }
 
@@ -741,11 +803,23 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC721Metadata-tokenURI}.
      */
-    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        virtual
+        override
+        returns (string memory)
+    {
+        require(
+            _exists(tokenId),
+            'ERC721Metadata: URI query for nonexistent token'
+        );
 
         string memory baseURI = _baseURI();
-        return bytes(baseURI).length > 0 ? string(abi.encodePacked(baseURI, tokenId.toString())) : "";
+        return
+            bytes(baseURI).length > 0
+                ? string(abi.encodePacked(baseURI, tokenId.toString()))
+                : '';
     }
 
     /**
@@ -754,7 +828,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
      * by default, can be overriden in child contracts.
      */
     function _baseURI() internal view virtual returns (string memory) {
-        return "";
+        return '';
     }
 
     /**
@@ -762,11 +836,11 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
      */
     function approve(address to, uint256 tokenId) public virtual override {
         address owner = ERC721.ownerOf(tokenId);
-        require(to != owner, "ERC721: approval to current owner");
+        require(to != owner, 'ERC721: approval to current owner');
 
         require(
             _msgSender() == owner || isApprovedForAll(owner, _msgSender()),
-            "ERC721: approve caller is not owner nor approved for all"
+            'ERC721: approve caller is not owner nor approved for all'
         );
 
         _approve(to, tokenId);
@@ -775,8 +849,17 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC721-getApproved}.
      */
-    function getApproved(uint256 tokenId) public view virtual override returns (address) {
-        require(_exists(tokenId), "ERC721: approved query for nonexistent token");
+    function getApproved(uint256 tokenId)
+        public
+        view
+        virtual
+        override
+        returns (address)
+    {
+        require(
+            _exists(tokenId),
+            'ERC721: approved query for nonexistent token'
+        );
 
         return _tokenApprovals[tokenId];
     }
@@ -784,8 +867,12 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC721-setApprovalForAll}.
      */
-    function setApprovalForAll(address operator, bool approved) public virtual override {
-        require(operator != _msgSender(), "ERC721: approve to caller");
+    function setApprovalForAll(address operator, bool approved)
+        public
+        virtual
+        override
+    {
+        require(operator != _msgSender(), 'ERC721: approve to caller');
 
         _operatorApprovals[_msgSender()][operator] = approved;
         emit ApprovalForAll(_msgSender(), operator, approved);
@@ -794,7 +881,13 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     /**
      * @dev See {IERC721-isApprovedForAll}.
      */
-    function isApprovedForAll(address owner, address operator) public view virtual override returns (bool) {
+    function isApprovedForAll(address owner, address operator)
+        public
+        view
+        virtual
+        override
+        returns (bool)
+    {
         return _operatorApprovals[owner][operator];
     }
 
@@ -807,7 +900,10 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         uint256 tokenId
     ) public virtual override {
         //solhint-disable-next-line max-line-length
-        require(_isApprovedOrOwner(_msgSender(), tokenId), "ERC721: transfer caller is not owner nor approved");
+        require(
+            _isApprovedOrOwner(_msgSender(), tokenId),
+            'ERC721: transfer caller is not owner nor approved'
+        );
 
         _transfer(from, to, tokenId);
     }
@@ -820,7 +916,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         address to,
         uint256 tokenId
     ) public virtual override {
-        safeTransferFrom(from, to, tokenId, "");
+        safeTransferFrom(from, to, tokenId, '');
     }
 
     /**
@@ -832,7 +928,10 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         uint256 tokenId,
         bytes memory _data
     ) public virtual override {
-        require(_isApprovedOrOwner(_msgSender(), tokenId), "ERC721: transfer caller is not owner nor approved");
+        require(
+            _isApprovedOrOwner(_msgSender(), tokenId),
+            'ERC721: transfer caller is not owner nor approved'
+        );
         _safeTransfer(from, to, tokenId, _data);
     }
 
@@ -861,7 +960,10 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         bytes memory _data
     ) internal virtual {
         _transfer(from, to, tokenId);
-        require(_checkOnERC721Received(from, to, tokenId, _data), "ERC721: transfer to non ERC721Receiver implementer");
+        require(
+            _checkOnERC721Received(from, to, tokenId, _data),
+            'ERC721: transfer to non ERC721Receiver implementer'
+        );
     }
 
     /**
@@ -883,10 +985,20 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
      *
      * - `tokenId` must exist.
      */
-    function _isApprovedOrOwner(address spender, uint256 tokenId) internal view virtual returns (bool) {
-        require(_exists(tokenId), "ERC721: operator query for nonexistent token");
+    function _isApprovedOrOwner(address spender, uint256 tokenId)
+        internal
+        view
+        virtual
+        returns (bool)
+    {
+        require(
+            _exists(tokenId),
+            'ERC721: operator query for nonexistent token'
+        );
         address owner = ERC721.ownerOf(tokenId);
-        return (spender == owner || getApproved(tokenId) == spender || isApprovedForAll(owner, spender));
+        return (spender == owner ||
+            getApproved(tokenId) == spender ||
+            isApprovedForAll(owner, spender));
     }
 
     /**
@@ -900,7 +1012,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
      * Emits a {Transfer} event.
      */
     function _safeMint(address to, uint256 tokenId) internal virtual {
-        _safeMint(to, tokenId, "");
+        _safeMint(to, tokenId, '');
     }
 
     /**
@@ -915,7 +1027,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         _mint(to, tokenId);
         require(
             _checkOnERC721Received(address(0), to, tokenId, _data),
-            "ERC721: transfer to non ERC721Receiver implementer"
+            'ERC721: transfer to non ERC721Receiver implementer'
         );
     }
 
@@ -932,8 +1044,8 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
      * Emits a {Transfer} event.
      */
     function _mint(address to, uint256 tokenId) internal virtual {
-        require(to != address(0), "ERC721: mint to the zero address");
-        require(!_exists(tokenId), "ERC721: token already minted");
+        require(to != address(0), 'ERC721: mint to the zero address');
+        require(!_exists(tokenId), 'ERC721: token already minted');
 
         _beforeTokenTransfer(address(0), to, tokenId);
 
@@ -983,8 +1095,11 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         address to,
         uint256 tokenId
     ) internal virtual {
-        require(ERC721.ownerOf(tokenId) == from, "ERC721: transfer of token that is not own");
-        require(to != address(0), "ERC721: transfer to the zero address");
+        require(
+            ERC721.ownerOf(tokenId) == from,
+            'ERC721: transfer of token that is not own'
+        );
+        require(to != address(0), 'ERC721: transfer to the zero address');
 
         _beforeTokenTransfer(from, to, tokenId);
 
@@ -1025,11 +1140,20 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
         bytes memory _data
     ) private returns (bool) {
         if (to.isContract()) {
-            try IERC721Receiver(to).onERC721Received(_msgSender(), from, tokenId, _data) returns (bytes4 retval) {
+            try
+                IERC721Receiver(to).onERC721Received(
+                    _msgSender(),
+                    from,
+                    tokenId,
+                    _data
+                )
+            returns (bytes4 retval) {
                 return retval == IERC721Receiver.onERC721Received.selector;
             } catch (bytes memory reason) {
                 if (reason.length == 0) {
-                    revert("ERC721: transfer to non ERC721Receiver implementer");
+                    revert(
+                        'ERC721: transfer to non ERC721Receiver implementer'
+                    );
                 } else {
                     assembly {
                         revert(add(32, reason), mload(reason))
@@ -1062,10 +1186,7 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata {
     ) internal virtual {}
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/extensions/IERC721Enumerable.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -1083,7 +1204,10 @@ interface IERC721Enumerable is IERC721 {
      * @dev Returns a token ID owned by `owner` at a given `index` of its token list.
      * Use along with {balanceOf} to enumerate all of ``owner``'s tokens.
      */
-    function tokenOfOwnerByIndex(address owner, uint256 index) external view returns (uint256 tokenId);
+    function tokenOfOwnerByIndex(address owner, uint256 index)
+        external
+        view
+        returns (uint256 tokenId);
 
     /**
      * @dev Returns a token ID at a given `index` of all the tokens stored by the contract.
@@ -1092,13 +1216,9 @@ interface IERC721Enumerable is IERC721 {
     function tokenByIndex(uint256 index) external view returns (uint256);
 }
 
-
 // File @openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol@v4.3.1
 
-// SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
-
 
 /**
  * @dev This implements an optional extension of {ERC721} defined in the EIP that adds
@@ -1121,15 +1241,32 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     /**
      * @dev See {IERC165-supportsInterface}.
      */
-    function supportsInterface(bytes4 interfaceId) public view virtual override(IERC165, ERC721) returns (bool) {
-        return interfaceId == type(IERC721Enumerable).interfaceId || super.supportsInterface(interfaceId);
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(IERC165, ERC721)
+        returns (bool)
+    {
+        return
+            interfaceId == type(IERC721Enumerable).interfaceId ||
+            super.supportsInterface(interfaceId);
     }
 
     /**
      * @dev See {IERC721Enumerable-tokenOfOwnerByIndex}.
      */
-    function tokenOfOwnerByIndex(address owner, uint256 index) public view virtual override returns (uint256) {
-        require(index < ERC721.balanceOf(owner), "ERC721Enumerable: owner index out of bounds");
+    function tokenOfOwnerByIndex(address owner, uint256 index)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        require(
+            index < ERC721.balanceOf(owner),
+            'ERC721Enumerable: owner index out of bounds'
+        );
         return _ownedTokens[owner][index];
     }
 
@@ -1143,8 +1280,17 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     /**
      * @dev See {IERC721Enumerable-tokenByIndex}.
      */
-    function tokenByIndex(uint256 index) public view virtual override returns (uint256) {
-        require(index < ERC721Enumerable.totalSupply(), "ERC721Enumerable: global index out of bounds");
+    function tokenByIndex(uint256 index)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        require(
+            index < ERC721Enumerable.totalSupply(),
+            'ERC721Enumerable: global index out of bounds'
+        );
         return _allTokens[index];
     }
 
@@ -1210,7 +1356,9 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
      * @param from address representing the previous owner of the given token ID
      * @param tokenId uint256 ID of the token to be removed from the tokens list of the given address
      */
-    function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId) private {
+    function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId)
+        private
+    {
         // To prevent a gap in from's tokens array, we store the last token in the index of the token to delete, and
         // then delete the last slot (swap and pop).
 
@@ -1256,10 +1404,7 @@ abstract contract ERC721Enumerable is ERC721, IERC721Enumerable {
     }
 }
 
-
 // File @openzeppelin/contracts/token/ERC20/IERC20.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -1284,7 +1429,9 @@ interface IERC20 {
      *
      * Emits a {Transfer} event.
      */
-    function transfer(address recipient, uint256 amount) external returns (bool);
+    function transfer(address recipient, uint256 amount)
+        external
+        returns (bool);
 
     /**
      * @dev Returns the remaining number of tokens that `spender` will be
@@ -1293,7 +1440,10 @@ interface IERC20 {
      *
      * This value changes when {approve} or {transferFrom} are called.
      */
-    function allowance(address owner, address spender) external view returns (uint256);
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
 
     /**
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
@@ -1338,13 +1488,14 @@ interface IERC20 {
      * @dev Emitted when the allowance of a `spender` for an `owner` is set by
      * a call to {approve}. `value` is the new allowance.
      */
-    event Approval(address indexed owner, address indexed spender, uint256 value);
+    event Approval(
+        address indexed owner,
+        address indexed spender,
+        uint256 value
+    );
 }
 
-
 // File @openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -1370,14 +1521,9 @@ interface IERC20Metadata is IERC20 {
     function decimals() external view returns (uint8);
 }
 
-
 // File @openzeppelin/contracts/token/ERC20/ERC20.sol@v4.3.1
 
-// SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
-
-
 
 /**
  * @dev Implementation of the {IERC20} interface.
@@ -1470,7 +1616,13 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev See {IERC20-balanceOf}.
      */
-    function balanceOf(address account) public view virtual override returns (uint256) {
+    function balanceOf(address account)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
         return _balances[account];
     }
 
@@ -1482,7 +1634,12 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - `recipient` cannot be the zero address.
      * - the caller must have a balance of at least `amount`.
      */
-    function transfer(address recipient, uint256 amount) public virtual override returns (bool) {
+    function transfer(address recipient, uint256 amount)
+        public
+        virtual
+        override
+        returns (bool)
+    {
         _transfer(_msgSender(), recipient, amount);
         return true;
     }
@@ -1490,7 +1647,13 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     /**
      * @dev See {IERC20-allowance}.
      */
-    function allowance(address owner, address spender) public view virtual override returns (uint256) {
+    function allowance(address owner, address spender)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
         return _allowances[owner][spender];
     }
 
@@ -1501,7 +1664,12 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 amount) public virtual override returns (bool) {
+    function approve(address spender, uint256 amount)
+        public
+        virtual
+        override
+        returns (bool)
+    {
         _approve(_msgSender(), spender, amount);
         return true;
     }
@@ -1527,7 +1695,10 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         _transfer(sender, recipient, amount);
 
         uint256 currentAllowance = _allowances[sender][_msgSender()];
-        require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");
+        require(
+            currentAllowance >= amount,
+            'ERC20: transfer amount exceeds allowance'
+        );
         unchecked {
             _approve(sender, _msgSender(), currentAllowance - amount);
         }
@@ -1547,8 +1718,16 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      *
      * - `spender` cannot be the zero address.
      */
-    function increaseAllowance(address spender, uint256 addedValue) public virtual returns (bool) {
-        _approve(_msgSender(), spender, _allowances[_msgSender()][spender] + addedValue);
+    function increaseAllowance(address spender, uint256 addedValue)
+        public
+        virtual
+        returns (bool)
+    {
+        _approve(
+            _msgSender(),
+            spender,
+            _allowances[_msgSender()][spender] + addedValue
+        );
         return true;
     }
 
@@ -1566,9 +1745,16 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - `spender` must have allowance for the caller of at least
      * `subtractedValue`.
      */
-    function decreaseAllowance(address spender, uint256 subtractedValue) public virtual returns (bool) {
+    function decreaseAllowance(address spender, uint256 subtractedValue)
+        public
+        virtual
+        returns (bool)
+    {
         uint256 currentAllowance = _allowances[_msgSender()][spender];
-        require(currentAllowance >= subtractedValue, "ERC20: decreased allowance below zero");
+        require(
+            currentAllowance >= subtractedValue,
+            'ERC20: decreased allowance below zero'
+        );
         unchecked {
             _approve(_msgSender(), spender, currentAllowance - subtractedValue);
         }
@@ -1595,13 +1781,16 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         address recipient,
         uint256 amount
     ) internal virtual {
-        require(sender != address(0), "ERC20: transfer from the zero address");
-        require(recipient != address(0), "ERC20: transfer to the zero address");
+        require(sender != address(0), 'ERC20: transfer from the zero address');
+        require(recipient != address(0), 'ERC20: transfer to the zero address');
 
         _beforeTokenTransfer(sender, recipient, amount);
 
         uint256 senderBalance = _balances[sender];
-        require(senderBalance >= amount, "ERC20: transfer amount exceeds balance");
+        require(
+            senderBalance >= amount,
+            'ERC20: transfer amount exceeds balance'
+        );
         unchecked {
             _balances[sender] = senderBalance - amount;
         }
@@ -1622,7 +1811,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - `account` cannot be the zero address.
      */
     function _mint(address account, uint256 amount) internal virtual {
-        require(account != address(0), "ERC20: mint to the zero address");
+        require(account != address(0), 'ERC20: mint to the zero address');
 
         _beforeTokenTransfer(address(0), account, amount);
 
@@ -1645,12 +1834,12 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      * - `account` must have at least `amount` tokens.
      */
     function _burn(address account, uint256 amount) internal virtual {
-        require(account != address(0), "ERC20: burn from the zero address");
+        require(account != address(0), 'ERC20: burn from the zero address');
 
         _beforeTokenTransfer(account, address(0), amount);
 
         uint256 accountBalance = _balances[account];
-        require(accountBalance >= amount, "ERC20: burn amount exceeds balance");
+        require(accountBalance >= amount, 'ERC20: burn amount exceeds balance');
         unchecked {
             _balances[account] = accountBalance - amount;
         }
@@ -1679,8 +1868,8 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
         address spender,
         uint256 amount
     ) internal virtual {
-        require(owner != address(0), "ERC20: approve from the zero address");
-        require(spender != address(0), "ERC20: approve to the zero address");
+        require(owner != address(0), 'ERC20: approve from the zero address');
+        require(spender != address(0), 'ERC20: approve to the zero address');
 
         _allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
@@ -1727,13 +1916,9 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     ) internal virtual {}
 }
 
-
 // File @openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol@v4.3.1
 
-// SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
-
 
 /**
  * @title SafeERC20
@@ -1752,7 +1937,10 @@ library SafeERC20 {
         address to,
         uint256 value
     ) internal {
-        _callOptionalReturn(token, abi.encodeWithSelector(token.transfer.selector, to, value));
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.transfer.selector, to, value)
+        );
     }
 
     function safeTransferFrom(
@@ -1761,7 +1949,10 @@ library SafeERC20 {
         address to,
         uint256 value
     ) internal {
-        _callOptionalReturn(token, abi.encodeWithSelector(token.transferFrom.selector, from, to, value));
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.transferFrom.selector, from, to, value)
+        );
     }
 
     /**
@@ -1781,9 +1972,12 @@ library SafeERC20 {
         // 'safeIncreaseAllowance' and 'safeDecreaseAllowance'
         require(
             (value == 0) || (token.allowance(address(this), spender) == 0),
-            "SafeERC20: approve from non-zero to non-zero allowance"
+            'SafeERC20: approve from non-zero to non-zero allowance'
         );
-        _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, value));
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(token.approve.selector, spender, value)
+        );
     }
 
     function safeIncreaseAllowance(
@@ -1792,7 +1986,14 @@ library SafeERC20 {
         uint256 value
     ) internal {
         uint256 newAllowance = token.allowance(address(this), spender) + value;
-        _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));
+        _callOptionalReturn(
+            token,
+            abi.encodeWithSelector(
+                token.approve.selector,
+                spender,
+                newAllowance
+            )
+        );
     }
 
     function safeDecreaseAllowance(
@@ -1802,9 +2003,19 @@ library SafeERC20 {
     ) internal {
         unchecked {
             uint256 oldAllowance = token.allowance(address(this), spender);
-            require(oldAllowance >= value, "SafeERC20: decreased allowance below zero");
+            require(
+                oldAllowance >= value,
+                'SafeERC20: decreased allowance below zero'
+            );
             uint256 newAllowance = oldAllowance - value;
-            _callOptionalReturn(token, abi.encodeWithSelector(token.approve.selector, spender, newAllowance));
+            _callOptionalReturn(
+                token,
+                abi.encodeWithSelector(
+                    token.approve.selector,
+                    spender,
+                    newAllowance
+                )
+            );
         }
     }
 
@@ -1819,18 +2030,21 @@ library SafeERC20 {
         // we're implementing it ourselves. We use {Address.functionCall} to perform this call, which verifies that
         // the target address contains contract code and also asserts for success in the low-level call.
 
-        bytes memory returndata = address(token).functionCall(data, "SafeERC20: low-level call failed");
+        bytes memory returndata = address(token).functionCall(
+            data,
+            'SafeERC20: low-level call failed'
+        );
         if (returndata.length > 0) {
             // Return data is optional
-            require(abi.decode(returndata, (bool)), "SafeERC20: ERC20 operation did not succeed");
+            require(
+                abi.decode(returndata, (bool)),
+                'SafeERC20: ERC20 operation did not succeed'
+            );
         }
     }
 }
 
-
 // File @openzeppelin/contracts/utils/math/SafeMath.sol@v4.3.1
-
-// SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
 
@@ -1850,7 +2064,11 @@ library SafeMath {
      *
      * _Available since v3.4._
      */
-    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryAdd(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
         unchecked {
             uint256 c = a + b;
             if (c < a) return (false, 0);
@@ -1863,7 +2081,11 @@ library SafeMath {
      *
      * _Available since v3.4._
      */
-    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function trySub(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
         unchecked {
             if (b > a) return (false, 0);
             return (true, a - b);
@@ -1875,7 +2097,11 @@ library SafeMath {
      *
      * _Available since v3.4._
      */
-    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryMul(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
         unchecked {
             // Gas optimization: this is cheaper than requiring 'a' not being zero, but the
             // benefit is lost if 'b' is also tested.
@@ -1892,7 +2118,11 @@ library SafeMath {
      *
      * _Available since v3.4._
      */
-    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryDiv(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
         unchecked {
             if (b == 0) return (false, 0);
             return (true, a / b);
@@ -1904,7 +2134,11 @@ library SafeMath {
      *
      * _Available since v3.4._
      */
-    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {
+    function tryMod(uint256 a, uint256 b)
+        internal
+        pure
+        returns (bool, uint256)
+    {
         unchecked {
             if (b == 0) return (false, 0);
             return (true, a % b);
@@ -2057,7 +2291,6 @@ library SafeMath {
     }
 }
 
-
 // File contracts/CryptoGasStationNFP.sol
 
 // NON FUNGIBLE PATRONS - NFPs
@@ -2069,11 +2302,7 @@ library SafeMath {
 // 12 LEGENDARY
 // STAKE TO EARN USDC
 
-// SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
-
-
-
 
 contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
     using SafeMath for uint256;
@@ -2132,24 +2361,32 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
      */
     mapping(uint8 => uint256) public patronRarityPrice;
 
-    ERC20 usdc;
+    ERC20 public usdc;
+
+    address public payTo;
 
     event BuyPatron(address _owner, uint256 _tokenId, uint8 _rarity);
 
     modifier rarityExists(uint8 _rarity) {
-        require(0 < _rarity && _rarity <= 3, "rarity doesn't exist");
+        require(
+            0 < _rarity && _rarity <= 3,
+            "CryptoGasStationNFP: rarity doesn't exist"
+        );
         _;
     }
 
-    constructor(string memory _initialBaseURI, ERC20 _usdc)
-        ERC721('Gas Station NFPs', 'NFP')
-    {
+    constructor(
+        string memory _initialBaseURI,
+        ERC20 _usdc,
+        address _payTo
+    ) ERC721('Gas Station NFPs', 'NFP') {
         baseURI = _initialBaseURI;
         usdc = _usdc;
+        payTo = _payTo;
 
-        _setAmountTotal(1, 500);
-        _setAmountTotal(2, 38);
-        _setAmountTotal(3, 12);
+        _setAmountTotal(COMMON, 500);
+        _setAmountTotal(RARE, 38);
+        _setAmountTotal(LEGENDARY, 12);
     }
 
     /**
@@ -2239,36 +2476,45 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
     {
         require(
             _amountTotal >= amountMinted[_rarity],
-            'NFPs: minted NFPs amount is larger than this total limit'
+            'CryptoGasStationNFP: minted NFPs amount is larger than this total limit'
         );
         amountTotal[_rarity] = _amountTotal;
     }
 
-    function _getPatronRarityPrice(uint8 _rarity)
-        internal
+    /**
+     * @dev Update payTo address
+     * @param _payTo new address to send payments to
+     */
+    function updatePayTo(address _payTo) external onlyOwner {
+        payTo = _payTo;
+    }
+
+    function getPatronRarityPrice(uint8 _rarity)
+        public
         view
         rarityExists(_rarity)
         returns (uint256)
     {
         uint256 currentSupply = amountMinted[_rarity];
+        uint8 usdcDecimals = usdc.decimals();
 
         if (_rarity == LEGENDARY) {
             return
-                uint256(750).mul(10**usdc.decimals()).add(
-                    uint256(375).mul(10**usdc.decimals()).mul(currentSupply)
+                uint256(750).mul(10**usdcDecimals).add(
+                    uint256(375).mul(10**usdcDecimals).mul(currentSupply)
                 );
         }
 
         if (_rarity == RARE) {
             return
-                uint256(250).mul(10**usdc.decimals()).add(
-                    uint256(39).mul(10**usdc.decimals()).mul(currentSupply)
+                uint256(250).mul(10**usdcDecimals).add(
+                    uint256(39).mul(10**usdcDecimals).mul(currentSupply)
                 );
         }
 
         return
-            uint256(25).mul(10**usdc.decimals()).add(
-                uint256(25).mul(10**usdc.decimals()).mul(currentSupply / 125)
+            uint256(25).mul(10**usdcDecimals).add(
+                uint256(25).mul(10**usdcDecimals).mul(currentSupply / 125)
             );
     }
 
@@ -2283,20 +2529,15 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
         rarityExists(_rarity)
         returns (uint256)
     {
-        uint256 msgValue = msg.value;
         address msgSender = msg.sender;
         uint16 _amountMinted = amountMinted[_rarity];
         uint16 _amountTotal = amountTotal[_rarity];
         require(
             _amountMinted < _amountTotal,
-            'PatronMarket: all patrons in this rarity are sold'
+            'CryptoGasStationNFP: all patrons in this rarity are sold'
         );
 
-        usdc.safeTransferFrom(
-            msg.sender,
-            address(this),
-            _getPatronRarityPrice(_rarity)
-        );
+        usdc.safeTransferFrom(msg.sender, payTo, getPatronRarityPrice(_rarity));
 
         tokenId = tokenId.add(1);
         _amountMinted = _amountMinted + 1;
@@ -2316,7 +2557,7 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
      * @param _to reciever
      * @return token ID
      */
-    function mintpatron(uint8 _rarity, address _to)
+    function mintPatron(uint8 _rarity, address _to)
         external
         onlyOwner
         rarityExists(_rarity)
@@ -2326,7 +2567,7 @@ contract CryptoGasStationNFP is ERC721Enumerable, Ownable {
         uint16 _amountTotal = amountTotal[_rarity];
         require(
             _amountMinted < _amountTotal,
-            'PatronMarket: all patrons in this rarity are sold'
+            'CryptoGasStationNFP: all patrons in this rarity are sold'
         );
         tokenId = tokenId.add(1);
         _amountMinted = _amountMinted + 1;

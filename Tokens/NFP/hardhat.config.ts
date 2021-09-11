@@ -15,10 +15,10 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const privateKey = process.env['PRIVATE_KEY'] || '';
-const rpcRinkebyAddress = process.env['RINKEBY_RPC_ADDRESS'] || '';
-const scanRinkebyApiKey = process.env['RINKEBY_ETHERSCAN_API_KEY'] || '';
-const rpcAddress = process.env['ETHEREUM_RPC_ADDRESS'] || '';
-const scanApiKey = process.env['ETHERSCAN_API_KEY'] || '';
+const rpcPolygonAddress = process.env['POLYGON_RPC_ADDRESS'] || '';
+const polygonscanApiKey = process.env['POLYGONSCAN_API_KEY'] || '';
+const rpcBSCAddress = process.env['BSC_RPC_ADDRESS'] || '';
+const bscscanApiKey = process.env['BSCSCAN_API_KEY'] || '';
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -55,25 +55,32 @@ const config: HardhatUserConfig = {
   },
   defaultNetwork: 'hardhat',
   networks: {
+    // hardhat: {
+    //   chainId: 56,
+    //   forking: {
+    //     url: rpcBSCAddress,
+    //     blockNumber: 10784771,
+    //   },
+    // },
     hardhat: {
-      chainId: 4,
+      chainId: 137,
       forking: {
-        url: rpcRinkebyAddress,
-        blockNumber: 9248411,
+        url: rpcPolygonAddress,
+        blockNumber: 18944218,
       },
     },
     localhost: {
       url: 'http://127.0.0.1:7545',
       accounts: [privateKey],
     },
-    rinkeby: {
-      chainId: 4,
-      url: rpcRinkebyAddress,
+    polygon: {
+      chainId: 137,
+      url: rpcPolygonAddress,
       accounts: [privateKey],
     },
-    ethereum: {
-      chainId: 1,
-      url: rpcAddress,
+    bsc: {
+      chainId: 56,
+      url: rpcBSCAddress,
       accounts: [privateKey],
     },
   },
@@ -101,7 +108,7 @@ const config: HardhatUserConfig = {
     timeout: 300000,
   },
   etherscan: {
-    apiKey: scanRinkebyApiKey || scanApiKey,
+    apiKey: polygonscanApiKey || bscscanApiKey,
   },
   typechain: {
     outDir: './typechain',
